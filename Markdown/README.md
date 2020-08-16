@@ -37,7 +37,7 @@ Markdown is a markup language that can make plain text look like **rich** _text_
 
 [Link to Google (with tooltip)](https://www.google.com "Google's Homepage"): `[Link to Google (with tooltip)](https://www.google.com "Google's Homepage")`
 
-[Go to This Repo's Root Directory](..): `[Go to This Repo's Root Directory](..)`
+[Go to This Repo's Root Directory](/../..): `[Go to This Repo's Root Directory](/../..)`
 
 ![Markdown Logo](img-markdown.png)
 
