@@ -1,0 +1,15 @@
+{
+	"dataTypes": {
+		"string": "Hello JSON!",
+		"number": 3.14e-1,
+		"object": {
+			"key": "value"
+		},
+		"array": [
+			"index 0",
+			"index 1"
+		],
+		"boolean": true,
+		"null": null
+	}
+}
