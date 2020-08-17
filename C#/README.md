@@ -1,2 +1,2 @@
 # C\#
-![C# Logo](img-c#.png)
+![C# Logo](img-csharp.png)
