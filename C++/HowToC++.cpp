@@ -272,7 +272,7 @@ int main(int argc, char *argv[])
 	}
 
 	// Classes
-	//SampleClass class0 {"science", 20, STATE_ROWDY}; // SampleClass is abstract
+	//SampleClass class0 {"science", 20, State::rowdy}; // SampleClass is abstract
 	MathClass class1 {50};
 	EnglishClass class2 {30};
 	class1.status();
