@@ -23,7 +23,7 @@ typedef union {
 	double d;
 } Shared;
 
-char* boolToString(bool b);
+const char* boolToString(bool b);
 void printUnion(const Shared *s);
 void printIntArr(int *arr, int length);
 int add1(void *ptr);

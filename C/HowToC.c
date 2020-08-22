@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* boolToString(bool b) {
+const char* boolToString(bool b) {
 	return b ? "true" : "false";
 }
 
@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
 	// Arrays & "Strings"
 	// Always null terminate a string
 	char myString[MAX_NAME_LENGTH] = { 'K', 'r', 'i', 's', 'h', 'n', 'a', '\0' }; // "Krishna"
-	Student student = { .name = myString, .grade = 94 };
+	Student student = { myString, 94 };
 	printf("%s got a %d.\n", student.name, student.grade);
 	printf("%s is %ld characters long.\n", myString, strlen(myString));
 	int begin = 0, end = 4;
@@ -153,13 +153,16 @@ int main(int argc, char *argv[]) {
 	}
 
 	int size = ARRAY_SIZE;
-	int *dynamicArr = malloc(sizeof(int) * size);
+	int *dynamicArr = (int*) calloc(size, sizeof(int));
 	dynamicArr[1] = myInt;
 	dynamicArr[4] = (int) myDouble;
 	printIntArr(dynamicArr, size);
 
 	size *= 2;
-	dynamicArr = realloc(dynamicArr, sizeof(int) * size);
+	dynamicArr = (int*) realloc(dynamicArr, sizeof(int) * size);
+	for (i = size/2; i < size; i++) {
+		dynamicArr[i] = 0;
+	}
 	dynamicArr[5] = (int) myChar;
 	dynamicArr[8] = (int) myBool;
 	dynamicArr[9] = state;
@@ -168,7 +171,6 @@ int main(int argc, char *argv[]) {
 	map(dynamicArr, size, add1);
 	printIntArr(dynamicArr, size);
 	free(dynamicArr); // always free allocated memory!
-	printf("\n");
 
 	// Extras
 	printf("How'd you do?\n");
