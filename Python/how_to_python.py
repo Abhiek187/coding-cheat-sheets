@@ -130,7 +130,7 @@ if __name__ == "__main__":
     print(list(filter(lambda l: len(l) > 0, my_string_list)))
     print()
 
-    # Logical Operators
+    # Logical Operators (no switch statements)
     print("Is power > number? %i" % (power > number))
     print("Ok, but is myInt = number? %i" % (my_int == number))
     if number != 0 and 3 in my_list:
