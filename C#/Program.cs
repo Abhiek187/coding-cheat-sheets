@@ -44,7 +44,7 @@ namespace HowToCsharp
         }
         ~SampleClass()
         {
-            Console.WriteLine($"You dropped out of {subject}.");
+            Program.Println($"You dropped out of {subject}.");
         }
         public override string ToString()
         {
