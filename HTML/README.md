@@ -6,7 +6,8 @@ HTML is the skeleton that creates websites like this. It is a markup language th
 ## How to Run
 Any modern browser should be able to render this file. You can test it out on a computer, tablet, or phone. There are two ways to run this site. One is to directly open `index.html` using Ctrl-O or Cmd-O in a browser. The other way is to run a server in the background. To do that, follow the following steps:
 
-1. On the command line, type `python3 -m http.server <PORT_NUM>` where <PORT_NUM> can be any number from 1024 to 65535. The default is 8000.
-2. Go to `localhost:<PORT_NUM>` in your browser.
+1. Go to this directory with `index.html`.
+2. On the command line, type `python3 -m http.server <PORT_NUM>` where <PORT_NUM> can be any number from 1024 to 65535. The default is 8000.
+3. Go to `localhost:<PORT_NUM>` in your browser.
 
 To stop the server, press Ctrl-C or Cmd-C on the command line. This second method will allow the website to be more dynamic. You can have the server handle any requests from the webpage. In our case, it's needed to read `how_to_json.json`. For more on HTML, check out the [documentation](https://developer.mozilla.org/en-US/docs/Web/HTML).
