@@ -12,7 +12,7 @@
 	<!-- The content of the website -->
 	<body>
 		<header>
-			<input type="checkbox" id="dark-mode" name="dark-mode">
+			<input type="checkbox" id="dark-mode" name="dark-mode" onclick="toggleDarkMode()">
 			<label for="dark-mode">Dark Mode</label> <!-- for must match id -->
 			<br>
 			<h1 id="title">How to HTML, CSS, & JavaScript</h1>
@@ -28,8 +28,9 @@
 		<section>
 			<form>
 				<label>What's your name?</label>
-				<input type="text" name="name">
+				<input type="text">
 				<button class="submit-button">Submit</button>
+				<p class="name-response"></p>
 			</form>
 			<label for="option-select">Select an Option:</label>
 			<select id="option-select">
@@ -56,7 +57,7 @@
 				<span>This is a span.</span>
 				<span>How good is this font? 1ijlIJ5SoO0</span>
 				<!-- Will show today's date -->
-				<span>Today is...<time datetime="2038-01-19">January 19, 2038</time>.</span>
+				<span>Today is...<time datetime="2038-01-19">Tuesday, January 19, 2038</time>.</span>
 				<span>
 					<button type="button" class="alert-button">Alert Button</button>
 				</span>
@@ -119,12 +120,11 @@
 					</tr>
 				</tfoot>
 			</table>
-			<canvas width="300" height="300">A Blue Circle</canvas>
+			<canvas width="300" height="300">A Circle Drawn in Canvas</canvas> <!-- alt text -->
 			<br>
 			<code class="code-block">console.log("Press Ctrl-Shift-J (or Cmd-Opt-J) to open the developer console.");</code>
 			<details class="details">
 				<summary>Show More</summary>
-				<!-- TODO: append text below -->
 				<p class="details-text">This message will self-destruct in 3...</p>
 			</details>
 		</article>
@@ -145,6 +145,6 @@
 			<small class="small-text">Legal jargon made so small most users wouldn't read this, but thanks for taking the time to read me. &#9786;</small> <!-- white smiling face -->
 		</footer>
 		<noscript>Is JavaScript enabled?</noscript> <!-- would not be seen on most browsers -->
-		<!--<script src="../JavaScript/app.js"></script>--> <!-- execute JavaScript file -->
+		<script src="../JavaScript/app.js"></script> <!-- execute JavaScript file -->
 	</body>
 </html>

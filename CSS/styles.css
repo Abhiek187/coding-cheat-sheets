@@ -1,9 +1,13 @@
 /* Comments look like this */
 body {
 	font-family: Verdana, Courier New, Arial, Sans-serif; /* Font that distinguishes 1ijlIJ5SoO0 */
+}
+
+/* Combine tags, classes, and ids */
+body.dark {
 	/* Dark Mode */
-	/*background-color: #111; /* hex color; close to black */
-	/*color: #eee; /* color of text; close to white */
+	background-color: #111; /* hex color; close to black */
+	color: #eee; /* color of text; close to white */
 }
 
 /* All children of the section tag */
@@ -43,16 +47,30 @@ td {
 	border-collapse: collapse;
 }
 
+table.dark,
+th.dark,
+td.dark {
+	border-color: white;
+}
+
 /* Odd body and footer rows (starts at 1 instead of 0) */
 tr:nth-child(2n + 1) > td {
 	background-color: lightgray;
+}
+
+tr:nth-child(2n + 1) > td.dark {
+	background-color: darkgray;
+}
+
+canvas {
+	display: block; /* allows canvas to be centered */
 }
 
 /* space = descendant, > = child, + = adjacent sibling, ~ = general sibling */
 #dark-mode,
 #dark-mode + label {
 	float: right;
-	margin-right: 1%;
+	margin-right: 1%; /* % is better than px for responsive design */
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -74,6 +92,16 @@ tr:nth-child(2n + 1) > td {
 /* When cursor is over the submit button */
 .submit-button:hover {
 	cursor: pointer;
+}
+
+.name-response {
+	display: none; /* shorten gap below */
+	margin-left: 1%;
+	color: blue;
+}
+
+.name-response.dark {
+	color: yellow; /* the inverse of blue; looks sharper than using filter */
 }
 
 .free-text-label {
@@ -135,6 +163,11 @@ tr:nth-child(2n + 1) > td {
 	padding: 0.5%;
 }
 
+.code-block.dark {
+	background-color: darkgray;
+	border-color: white;
+}
+
 .details {
 	margin: 1%;
 }
@@ -152,6 +185,10 @@ tr:nth-child(2n + 1) > td {
 	width: 10%;
 }
 
+.html-img.dark {
+	background-color: lightgray;
+}
+
 @media screen and (max-width: 700px) {
 	/* Rules for screen sizes <= 700px */
 	.html-img {
@@ -165,6 +202,11 @@ tr:nth-child(2n + 1) > td {
 
 .link {
 	font-size: 0.9em;
+}
+
+.link.dark {
+	filter: invert(100%);
+	-webkit-filter: invert(100%); /* support older webkit browsers (Chrome, Safari, etc.) */
 }
 
 .small-text {
