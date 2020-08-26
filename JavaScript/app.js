@@ -23,10 +23,6 @@ const link = document.querySelector(".link");
 // DOM elements that change in dark mode
 const darkModeElements = [document.body, response, table, canvas, codeBlock, htmlImg, link];
 
-// Number of states in the details animation
-let currentState = 0;
-let interval = null;
-
 // Event listeners
 alertButton.addEventListener("click", () => alert("An alert popped up!"));
 
@@ -43,35 +39,41 @@ submitButton.addEventListener("click", event => {
 	}
 });
 
-details.addEventListener("toggle", () => {
-	if (details.open) {
-		// Start the animation (will start after 1 second)
-		interval = setInterval(detonate, 1000); // 2nd parameter is in milliseconds
-	} else {
-		// Stop the animation
-		clearInterval(interval);
-		currentState = 0; // reset to initial state
-		detailsText.textContent = "This message will self-destruct in 3...";
-	}
-});
+details.addEventListener("toggle", (() => {
+	// Private variables
+	let currentState = 0;
+	let interval = null;
+
+	const detonate = () => {
+		currentState++;
+
+		switch (currentState) {
+			case 1:
+				detailsText.textContent += "2...";
+				break;
+			case 2:
+				detailsText.textContent += "1...";
+				break;
+			default:
+				detailsText.textContent = "\u{1F4A5}\u{1F4A3}\u{1F4A5}"; // explosions!
+				clearInterval(interval); // stop animation there
+		}
+	};
+
+	return () => {
+		if (details.open) {
+			// Start the animation (will start after 1 second)
+			interval = setInterval(detonate, 1000); // 2nd parameter is in milliseconds
+		} else {
+			// Stop the animation
+			clearInterval(interval);
+			currentState = 0; // reset to initial state
+			detailsText.textContent = "This message will self-destruct in 3...";
+		}
+	};
+})()); // function immediately invoked
 
 // Arrow functions
-const detonate = () => {
-	currentState++;
-
-	switch (currentState) {
-		case 1:
-			detailsText.textContent += "2...";
-			break;
-		case 2:
-			detailsText.textContent += "1...";
-			break;
-		default:
-			detailsText.textContent = "\u{1F4A5}\u{1F4A3}\u{1F4A5}"; // explosions!
-			clearInterval(interval); // stop animation there
-	}
-};
-
 const toggleTableDarkMode = () => {
 	// Apply class change to each th and td element
 	th.forEach(h => h.classList.toggle("dark"));
