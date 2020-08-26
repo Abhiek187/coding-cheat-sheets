@@ -46,7 +46,7 @@ submitButton.addEventListener("click", event => {
 details.addEventListener("toggle", () => {
 	if (details.open) {
 		// Start the animation (will start after 1 second)
-		interval = setInterval(detonate, 1000); // 1000 milliseconds = 1 second
+		interval = setInterval(detonate, 1000); // 2nd parameter is in milliseconds
 	} else {
 		// Stop the animation
 		clearInterval(interval);
@@ -94,9 +94,14 @@ const toggleDarkMode = () => {
 };
 
 const fetchJSON = async () => {
-	const response = await fetch("../JSON/how_to_json.json");
-	const data = await response.json();
-	console.log(data);
+	// Network requests are asynchronous
+	try {
+		const response = await fetch("../JSON/how_to_json.json");
+		const data = await response.json(); // JSON converts nicely to a JavaScript object
+		console.log(data);
+	} catch (err) {
+		console.error(`Error: ${err}`);
+	}
 };
 
 // Functions that get called on startup
@@ -135,3 +140,4 @@ console.log("%cCongrats, you found the developer console! Type any JavaScript be
 	"font-size: 1.5em; color: red");
 getCurrentDate();
 drawCircle("red");
+fetchJSON();
