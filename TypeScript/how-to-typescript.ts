@@ -90,7 +90,9 @@ const undVar: any = undefined; // doesn't exist
  * window.prompt could be used as input, but would be intrusive to the user experience
  */
 console.log("state: " + state); // string concatenation
-// String interpolation (better)
+
+// Math Operations
+console.log(`${myInt} ^ ${myDouble} = ${myInt ** myDouble}`); // string interpolation (better)
 console.log(`Adding two numbers: ${myInt} + ${myDouble} = ${myInt + myDouble}`);
 console.log(`Adding a number with a string: ${myInt} + ${myString} = ${myInt + myString}`);
 console.log(`Weird math: 0/0.0 = ${0/0.0}, sqrt(-1) = ${Math.sqrt(-1)}`);
