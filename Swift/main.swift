@@ -29,10 +29,17 @@ protocol Class {
 }
 
 class SampleClass: Class {
-    var subject: String
-    var size: Int
-    var state: State
-    static var id = 0 // class vars and funcs can be overriden
+    /* Variables are internal by default
+     * private = accessible in this class
+     * fileprivate = accessible in this file
+     * internal = accessible in this module (framework)
+     * public = accessible anywhere
+     * open (class & class members only) = like public + the ability to subclass and override anywhere
+     */
+    private var subject: String
+    private var size: Int
+    private var state: State
+    fileprivate static var id = 0 // class vars and funcs can be overriden
 
     init(subject: String, size: Int, state: State) {
         self.subject = subject
@@ -114,6 +121,14 @@ func getSwiftVersion() -> Int {
     #endif
 }
 
+/* Overload **
+ * prefix = +x, infix = x + y, postfix = x+
+ */
+infix operator **
+func **(lhs: Double, rhs: Double) -> Double {
+    return pow(lhs, rhs)
+}
+
 func sumTo(_ num: Int=1) throws -> Int {
     if num <= 0 {
         throw "num must be positive"
@@ -155,7 +170,7 @@ print() // prints just a newline
 print("Adding two numbers: \(myInt) + \(myDouble) = \(Double(myInt) + myDouble)")
 print("\(myInt) + \(myString) = \(String(myInt) + myString)")
 print("Dividing two ints: \(myInt) / 2 = \(myInt / 2)")
-print("\(myDouble) ^ \(myInt) = \(pow(myDouble, Double(myInt)))")
+print("\(myDouble) ^ \(myInt) = \(myDouble ** Double(myInt))")
 print("Werid math: 0/0.0 = \(0/0.0), sqrt(-1) = \(sqrt(-1))")
 print("Rounding: \(myDouble) \u{2192} \(myDouble.round(toPlaces: 2))")
 print()
@@ -263,9 +278,13 @@ do {
 
 print()
 
-// Classes (final, w/ overloads)
-//let class0 = SampleClass(subject: "science", size: 20, state: .rowdy)
-let class1 = MathClass(size: 50)
-let class2 = EnglishClass(size: 30)
-class1.status()
-class2.status()
+// Classes
+// SampleClass is abstract
+//var class0: SampleClass? = SampleClass(subject: "science", size: 20, state: .rowdy)
+var class1: MathClass? = MathClass(size: 50)
+var class2: EnglishClass? = EnglishClass(size: 30)
+class1?.status()
+class2?.status()
+// "Force" deninit classes
+class1 = nil
+class2 = nil
