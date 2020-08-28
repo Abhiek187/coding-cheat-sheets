@@ -6,4 +6,11 @@ Swift is a language developed by Apple for iOS and macOS applications. It's desi
 ## How to Run
 As you'd might expect, Swift applications work best on Macs. You can download Xcode from the App Store and start working in Swift right away. Since this file deals with pure Swift syntax and not developing a UI, you can run `main.swift` in the playground. If you're not using a Mac, you can consult an [online IDE](http://online.swiftplayground.run/) or try installing Swift on [Windows](https://swiftforwindows.github.io/) or [Linux](https://swift.org/download/) using alternative methods.
 
+If you do have Swift installed on Linux, run the following commands:
+```
+make all
+./main.out
+```
+You can delete the `.out` file by running `make clean`.
+
 For more on Swift, check out the [documentation](https://swift.org/documentation/).
