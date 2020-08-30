@@ -14,7 +14,10 @@ enum State {
 }
 
 interface Class {
-	public void status();
+	default void status() {
+		// Default implementation, implicitly public
+		System.out.println("Something something classroom...");
+	}
 }
 
 abstract class SampleClass implements Class {
