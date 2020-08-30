@@ -1,5 +1,5 @@
 /* Enable strict mode: This will enforce rules such as declaring variables, not deleting variables,
- * and preventing reserved keywords from being overriden.
+ * and preventing reserved keywords from being overridden.
  * Note: This file will primarily focus on ES6 syntax and manipulating the DOM.
  * For more basic syntax and differences between ES5 and ES6, check out the TypeScript how-to.
  */

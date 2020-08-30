@@ -39,7 +39,7 @@ class SampleClass: Class {
     private var subject: String
     private var size: Int
     private var state: State
-    fileprivate static var id = 0 // class vars and funcs can be overriden
+    fileprivate static var id = 0 // class vars and funcs can be overridden
 
     init(subject: String, size: Int, state: State) {
         self.subject = subject

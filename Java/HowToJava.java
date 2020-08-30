@@ -46,7 +46,7 @@ abstract class SampleClass implements Class {
 	}
 }
 
-// Final class cannot be overriden
+// Final class cannot be overridden
 final class MathClass extends SampleClass {
 	public MathClass(int size) {
 		super("Math", size);
