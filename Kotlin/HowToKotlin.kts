@@ -1,5 +1,7 @@
+import java.util.Locale
 import kotlin.math.log2
 import kotlin.math.pow
+import kotlin.math.roundToInt
 import kotlin.math.sqrt
 import kotlin.system.exitProcess
 
@@ -8,12 +10,60 @@ enum class State {
 	CALM,
 	ROWDY; // one of the rare times you need a semicolon
 
-	override fun toString(): String = name.toLowerCase() // one-line return
+	override fun toString(): String = name.toLowerCase(Locale.ROOT) // one-line return
 }
 
 // Data classes come with equals(), hashCode(), toString(), componentN(), copy()
 data class Student(var name: String = "anonymous", var grade: Int = 100) {
 	override fun toString(): String = "$name got a $grade."
+}
+
+interface Class {
+	fun status() {
+		// Default implementation
+		println("Something something classroom...")
+	}
+}
+
+// Need to put val/var before parameters to make them member variables
+abstract class SampleClass(
+	private val subject: String,
+	private val size: Int,
+	private val state: State
+) : Class {
+	companion object {
+		// Contains static variables & methods
+		var id = 0
+	}
+
+	init {
+		id++
+	}
+
+	// Open methods can be overridden
+	open override fun toString(): String = "Welcome to some class! You are student #$id."
+
+	override fun status(): Unit {
+		// Unit == void
+		println("This $subject class has $size students and is $state.")
+	}
+}
+
+// Classes are final by default
+class MathClass(size: Int) : SampleClass(subject = "math", size = size, state = State.ROWDY) {
+	init {
+		println(this)
+	}
+
+	override fun toString(): String = "Welcome to math class! You are student #$id."
+}
+
+class EnglishClass(size: Int) : SampleClass(subject = "english", size = size, state = State.CALM) {
+	init {
+		println(this)
+	}
+
+	override fun toString(): String = "Welcome to english class! You are student #$id."
 }
 
 // Extensions
@@ -28,12 +78,12 @@ infix fun Double.`**`(exponent: Int): Double = this.pow(exponent)
 infix fun Double.`**`(exponent: Double): Double = this.pow(exponent)
 
 fun sumTo(num: Int=1): Int {
-	if (num <= 0) {
+	return if (num <= 0) {
 		throw IllegalArgumentException("num must be positive")
 	} else if (num == 1) {
-		return 1
+		1
 	} else {
-		return num + sumTo(num - 1)
+		num + sumTo(num - 1)
 	}
 }
 
@@ -49,7 +99,11 @@ fun main(args: Array<String>) {
 	val myBool: Boolean = true
 	val myString: String = "This is a string."
 	val state: State = State.ROWDY
-	val student: Student = Student(name = "Joe Schmo", 94) // named parameter (optional)
+	val student: Student = Student(name = "Chris Nowell", 65) // named parameter (optional)
+	student.apply {
+		name = "Joe Schmo"
+		grade = 94
+	}
 
 	// Input/Output
 	print("What's your name? ") // prints w/o a newline
@@ -60,12 +114,16 @@ fun main(args: Array<String>) {
 		exitProcess(status = -1)
 	}
 	println("Hey $name!")
-	println("state: $state, ordinal: ${state.ordinal}, name: ${state.name}") // braces for expressions
+
+	with (state) {
+		// this == state; don't confuse state.name with name
+		println("state: $this, ordinal: $ordinal, name: ${this.name}")
+	} // Eq. to println("state: $state, ordinal: ${state.ordinal}, name: ${state.name}")
 	println("student: $student")
 	println() // prints just a newline
 
 	// Math Operations
-	println("$myInt ^ $myDouble = ${myInt `**` myDouble}")
+	println("$myInt ^ $myDouble = ${myInt `**` myDouble}") // braces for expressions
 	println("Weird math: log2(-1) = ${log2(-1.0)}, sqrt(-1) = ${sqrt(-1.0)}, "
 		+ "(-1)^0.5 = ${(-1.0).pow(0.5)}")
 	println("Rounding: $myDouble \u2192 ${myDouble.round(2)}")
@@ -87,7 +145,6 @@ fun main(args: Array<String>) {
 	}
 
 	repeat(3) { println("repeat") }
-	args.forEachIndexed { index, arg -> println("args[$index] = $arg") }
 
 	for (i in 0 until 5) {
 		// or 0..4
@@ -101,6 +158,18 @@ fun main(args: Array<String>) {
 	println()
 
 	// Nullables
+	var maybeInt: Int? = null
+
+	// maybeInt!! will crash if null
+	maybeInt?.let {
+		println("maybeInt has a value: $it") // maybeInt = it by default
+	} ?: run {
+		println("null: $maybeInt")
+	}
+
+	maybeInt = myInt.also { num -> num - 2 }
+	println("maybeInt = $maybeInt, but myInt is also = $myInt")
+	println()
 
 	// Functions & Methods
 	println("sumTo(10) = ${sumTo(10)}")
@@ -112,14 +181,29 @@ fun main(args: Array<String>) {
 	println()
 
 	// Arrays & ArrayLists
-	var fixedArray: CharArray = charArrayOf('s', 't', 'r')
-
-	for ((index, value) in fixedArray.withIndex()) {
-		// Eq. to enumerate()
-		println("fixedArray[$index] = $value")
+	if (args.isEmpty()) {
+		println("Hmm, you didn't enter any command line arguments.")
+	} else {
+		args.forEachIndexed { index, arg -> println("args[$index] = $arg") }
 	}
 
-	println()
+	val cubes: DoubleArray = DoubleArray(5) { n -> n.toDouble() `**` 3 } // fixed array
+
+	for ((index, value) in cubes.withIndex()) {
+		// Eq. to enumerate()
+		println("$index ^ 3 = ${value.roundToInt()}") // make doubles whole numbers
+	}
+
+	var fakeString: ArrayList<Char> = arrayListOf('a', 't', 'r') // dynamic array
+	fakeString.remove('a')
+	fakeString.add(index = 0, element = 's')
+
+	for (c in fakeString) {
+		print("$c ")
+	}
+
+	fakeString.clear()
+	println('\n') // print two newlines
 
 	// Exception Handling
 	try {
@@ -131,6 +215,11 @@ fun main(args: Array<String>) {
 	}
 
 	// Classes
+	//val class0: SampleClass = SampleClass("science", 20, State.ROWDY) // SampleClass is abstract
+	val class1: MathClass = MathClass(size = 50)
+	val class2: EnglishClass = EnglishClass(size = 30)
+	class1.status()
+	class2.status()
 }
 
 /* Execution starts here for a .kts file,
