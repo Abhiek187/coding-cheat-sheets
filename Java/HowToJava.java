@@ -46,7 +46,8 @@ abstract class SampleClass implements Class {
 	}
 }
 
-class MathClass extends SampleClass {
+// Final class cannot be overriden
+final class MathClass extends SampleClass {
 	public MathClass(int size) {
 		super("Math", size);
 		this.state = State.ROWDY;
@@ -58,7 +59,7 @@ class MathClass extends SampleClass {
 	}
 }
 
-class EnglishClass extends SampleClass {
+final class EnglishClass extends SampleClass {
 	public EnglishClass(int size) {
 		super("English", size);
 		this.state = State.CALM;
