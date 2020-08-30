@@ -7,7 +7,7 @@ SQL (pronounced as either S-Q-L or SEQUEL) is a language used for relational dat
 Install a [MySQL server](https://dev.mysql.com/doc/mysql-getting-started/en/), then run the following commands:
 ```
 sudo service mysql start # only on Linux, on Mac check MySQL server in System Preferences
-sudo mysql -u root # or mysql -u root -p, then enter your server password
+sudo mysql -u root # or sudo mysql -u root -p, then enter your server password
 source HowToSQL.sql
 ```
 
