@@ -72,4 +72,4 @@ Horizontal Rule:
 ---
 `---` or `***` or `___`
 
-For more info, [visit John Gruber's Markdown site](https://daringfireball.net/projects/markdown/).
+For more on Markdown, [visit John Gruber's Markdown site](https://daringfireball.net/projects/markdown/).

@@ -10,4 +10,6 @@ make all
 ./HowToC++.out
 ```
 
-The `.out` file is ignored by git. You can delete it by running `make clean`. For more info on C++, check out the [documentation](https://devdocs.io/cpp/).
+The `.out` file is ignored by git. You can delete it by running `make clean`.
+
+For more info on C++, check out the [documentation](https://devdocs.io/cpp/).

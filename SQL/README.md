@@ -14,7 +14,7 @@ source HowToSQL.sql
 When you're done, run:
 ```
 exit # or quit or \q
-sudo service mysql stop # see comment in start command
+sudo service mysql stop # see comment in the start command
 ```
 
 For more info on SQL, check out the [documentation](https://dev.mysql.com/doc/refman/8.0/en/).

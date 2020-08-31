@@ -9,5 +9,4 @@ You will need to [install Java](https://www.java.com/en/) and save the path to a
 javac HowToJava.java
 java HowToJava
 ```
-
-You can find the full docs [here](https://docs.oracle.com/en/java/javase/).
+For more on Java, check out the [documentation](https://docs.oracle.com/en/java/javase/).
