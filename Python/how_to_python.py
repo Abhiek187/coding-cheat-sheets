@@ -80,8 +80,6 @@ if __name__ == "__main__":
     my_float = 98.5
     my_string = "Don't worry about apostrophes with double quotes. "
     x, y = 'two', 'three'
-    my_list = []
-    my_list_2 = [1, 2, 3, 5, 8]
     my_bool = True
     null_var = None
 
@@ -92,7 +90,8 @@ if __name__ == "__main__":
     print(my_string)
     print("I can print two values simultaneously like this: " + x, y)
     #  print("But don't do this: " + myInt + myString)
-    print("I can also insert variables like this %d, or that %.2f, or even this: %s" % (my_int, my_float, my_string))
+    print("I can also insert variables like this %d, or that %.2f, or even this: %s" % (my_int,
+        my_float, my_string))
     print("Another way to print {s} {s} {s} {s} {f:10.4f}".format(s='SPAM', f=my_float))
     print(f"A variable that's null: {null_var}")
     print()  # just a newline
@@ -100,17 +99,21 @@ if __name__ == "__main__":
     # Math Operations
     number = 3 + 2 - 9 * 6 / 3 % 8
     power = 2 ** 10
-    print(number)
-    print(power)
+    print(f"number = {number}")
+    print(f"power = {power}")
+    print(f"Adding a number with a bool: {my_float} + {my_bool} = {my_float + my_bool}")
     print(f"({power} / {number}) Float division: {power / number} vs. Int division: {power // number}")
     print(f"Yes even % works: {power} % {number} = {power % number}")
+    # Don't do 0/0.0 or sqrt(-1)
     print(f"Rounding is weird... {my_float} ~= {round(my_float)}")
     print(complex(my_int, my_float))
 
-    # List/Array & String methods
+    # List & String methods
+    my_list = []
+    my_list_2 = [1, 2, 3, 5, 8]
     my_list.append(3)
     my_list.extend([2, 1])
-    my_list.pop(-2)
+    my_list.pop(-2) # or my_list.remove(2)
     my_list.sort()
     for number in my_list:
         print(number)
@@ -130,7 +133,15 @@ if __name__ == "__main__":
     print(list(filter(lambda l: len(l) > 0, my_string_list)))
     print()
 
-    # Logical Operators (no switch statements)
+    # Logical Operators
+    # <, <=, >, >=, ==, and != behave like normal
+    # is behaves like triple equality (===)
+    if 0 is False and 0 == False:
+        print("True and False aren't 1 and 0.")
+    if 1 == True or 1 is True:
+        print("But True and False are subclassed as 1 and 0.")
+
+    # Conditional Operators (no switch or do-while statements)
     print("Is power > number? %i" % (power > number))
     print("Ok, but is myInt = number? %i" % (my_int == number))
     if number != 0 and 3 in my_list:
@@ -161,7 +172,7 @@ if __name__ == "__main__":
     # Declaring Functions
     help(fibonacci)
     for num in fibonacci(10):
-        print(f"{num} ", end='')
+        print(f"{num} ", end='') # print without a newline
     print()
     generic_func(10, 20, 30, food="spaghetti", animal="dog")
 
@@ -179,14 +190,16 @@ if __name__ == "__main__":
     finally:
         print()
 
-    # Dictionaries/Objects
+    # Dictionaries
     my_dictionary = {
-        "month": 8,
-        "day": 18,
-        "year": 1998
+        "month": 4,
+        "day": 15,
+        "year": 1994
     }
-    # myDictionary["age"] = 19
+
+    my_dictionary["age"] = 19
     print(my_dictionary)
+    print(my_dictionary.get("ssn", "private information"))
     for key, value in my_dictionary.items():
         print("My %s is %i" % (key, value))
     del my_dictionary["year"]
@@ -195,6 +208,7 @@ if __name__ == "__main__":
 
     # Tuples
     my_tuple = (True, True, False, True, False, True, True, False, False, True)
+    print(my_tuple[6:2:-1])
     print(f"Number of correct answers: {my_tuple.count(True)}")
     print(f"False first appears at index {my_tuple.index(False)}\n")
 
@@ -203,9 +217,14 @@ if __name__ == "__main__":
     my_set_1.add(2)
     my_set_1.add(1)
     my_set_1.add(1)
-    print(my_set_1)
+    my_set_1.remove(2)
+    my_set_1.discard('z') # z doesn't exist
+    print(f"set1 = {my_set_1}")
     my_set_2 = set('Minneapolis')
-    print(my_set_2)
-    print(f"The intersection of set1 and set2 is {my_set_1.intersection(my_set_2)}.")
-    print(f"The difference is {my_set_2.difference(my_set_1)}.")
+    print(f"set2 = {my_set_2}")
+    print(f"set1 | set2 = {my_set_1.union(my_set_2)}")
+    print(f"set1 & set2 = {my_set_1.intersection(my_set_2)}")
+    print(f"set1 - set2 = {my_set_1.difference(my_set_2)}")
+    print(f"set2 - set1 = {my_set_2.difference(my_set_1)}")
+    print(f"set1 ^ set2 = {my_set_2.symmetric_difference(my_set_1)}")
     print()
