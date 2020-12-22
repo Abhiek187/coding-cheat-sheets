@@ -70,7 +70,7 @@ SELECT * FROM Games;
 SELECT * FROM Reviews
 	LIMIT 5;
 
-SELECT Name, Ratings AS "reviews"
+SELECT Name, Ratings AS "Reviews"
 	FROM Games
 	WHERE Ratings BETWEEN 1000 AND 3000
 	OR Price = 0
@@ -78,11 +78,11 @@ SELECT Name, Ratings AS "reviews"
 SELECT Game, Stars, Review
 	FROM Reviews
 	WHERE Review LIKE "%great%";
-SELECT Game, COUNT(*) AS "total_reviews"
+SELECT Game, COUNT(*) AS "TotalReviews"
 	FROM Reviews
 	GROUP BY Game
 	HAVING COUNT(*) > 0;
-SELECT Game, AVG(stars) AS "average_rating"
+SELECT Game, AVG(stars) AS "AverageRating"
 	FROM Reviews
 	GROUP BY Game;
 
