@@ -1,8 +1,17 @@
+# GCC flags
 GCC = gcc -std=c11 -pedantic-errors -Wall -g3
-OUTPUT = HowToC.out
+# File name
+FILE = HowToC
+# Binary files
+OUTPUTS = $(wildcard *.out) $(wildcard *.o)
 
-all: HowToC.c
-	${GCC} -o ${OUTPUT} HowToC.c -lm
+# Default make command
+all: $(FILE).out
 
+# $@ = left of colon (target), $< = right of colon (prerequisite), $^ = all prerequisites
+$(FILE).out: $(FILE).c $(FILE).h
+	$(GCC) -o $@ $^ -lm
+
+# Remove all binary files (-f removes error if no files exist)
 clean:
-	rm -f ${OUTPUT}
+	rm -f $(OUTPUTS)

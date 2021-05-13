@@ -1,8 +1,17 @@
+# SwiftC flags
 SWIFTC = swiftc -g
-OUTPUT = main.out
+# File name
+FILE = main
+# Binary files
+OUTPUTS = $(wildcard *.out) $(wildcard *.o)
 
-all: main.swift
-	${SWIFTC} -o ${OUTPUT} main.swift
+# Default make command
+all: $(FILE).out
 
+# $@ = left of colon (target), $< = right of colon (prerequisite), $^ = all prerequisites
+$(FILE).out: $(FILE).swift
+	$(SWIFTC) -o $@ $<
+
+# Remove all binary files (-f removes error if no files exist)
 clean:
-	rm -f ${OUTPUT}
+	rm -f $(OUTPUTS)

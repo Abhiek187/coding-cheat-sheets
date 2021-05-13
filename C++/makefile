@@ -1,8 +1,17 @@
+# G++ flags
 G++ = g++ -std=c++17 -pedantic-errors -Wall -g3
-OUTPUT = HowToC++.out
+# File name
+FILE = HowToC++
+# Binary files
+OUTPUTS = $(wildcard *.out) $(wildcard *.o)
 
-all: HowToC++.cpp
-	${G++} -o ${OUTPUT} HowToC++.cpp
+# Default make command
+all: $(FILE).out
 
+# $@ = left of colon (target), $< = right of colon (prerequisite), $^ = all prerequisites
+$(FILE).out: $(FILE).cpp $(FILE).h
+	$(G++) -o $@ $^
+
+# Remove all binary files (-f removes error if no files exist)
 clean:
-	rm -f ${OUTPUT}
+	rm -f $(OUTPUTS)
