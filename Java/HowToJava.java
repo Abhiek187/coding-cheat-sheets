@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 enum State {
-	CALM,
-	ROWDY;
+	CALM, ROWDY;
 
 	@Override // not required, but helpful
 	public String toString() {
@@ -30,7 +29,7 @@ abstract class SampleClass implements Class {
 		this.subject = subject;
 		this.size = size;
 		this.state = State.ROWDY;
-		this.id++;
+		SampleClass.id++;
 		System.out.println(this);
 	}
 
@@ -41,8 +40,7 @@ abstract class SampleClass implements Class {
 
 	@Override
 	public void status() {
-		System.out.println("This " + this.subject + " class has " + this.size
-				+ " students and is " + this.state + ".");
+		System.out.println("This " + this.subject + " class has " + this.size + " students and is " + this.state + ".");
 	}
 }
 
@@ -100,20 +98,18 @@ public class HowToJava {
 		println("size = " + list.size());
 	}
 
-	/* This main function gets executed first
-	 * Since this class is public, it must match the file name
+	/*
+	 * This main function gets executed first Since this class is public, it must
+	 * match the file name
 	 *
-	 * public = can be called anywhere (not restricted by class or inherited classes)
-	 * static = can be called without an instance
-	 * (i.e. HowToJava.main instead of (new HowToJava()).main)
-	 * void = the function returns nothing
-	 * main = the name of the function
-	 * args = command line arguments
+	 * public = can be called anywhere (not restricted by class or inherited
+	 * classes), static = can be called without an instance (i.e. HowToJava.main
+	 * instead of (new HowToJava()).main), void = the function returns nothing, main
+	 * = the name of the function, args = command line arguments
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello Java!");
-		System.out.println("By the way, you're using Java version "
-				+ System.getProperty("java.version"));
+		System.out.println("By the way, you're using Java version " + System.getProperty("java.version"));
 
 		// Variables
 		int myInt = -13;
@@ -129,8 +125,8 @@ public class HowToJava {
 		System.out.print("What's your name? ");
 		String name = reader.nextLine();
 		System.out.println("Hey " + name + "!");
-		String formattedStr = String.format("Or if you want to be fancy, hi %s! "
-				+ "Your int = %d, double = %.2f, char = %c, and bool = %b.", name,
+		String formattedStr = String.format(
+				"Or if you want to be fancy, hi %s! " + "Your int = %d, double = %.2f, char = %c, and bool = %b.", name,
 				myInt, myDouble, myChar, myBool);
 		System.out.println(formattedStr);
 		System.out.println("null variable: " + nullVar);
@@ -141,17 +137,13 @@ public class HowToJava {
 
 		// Math Operations
 		// +, -, *, /, and % behave like normal
-		System.out.println("Adding two numbers: " + myInt + " + " + myDouble + " = "
-				+ (myInt + myDouble));
-		System.out.println("Adding a number and a char: " + myInt + " + " + myChar
-				+ " = " + (myInt + myChar));
-		System.out.println("Adding a number and a string: " + myInt + " + " + myString
-				+ " = " + (myInt + myString));
+		System.out.println("Adding two numbers: " + myInt + " + " + myDouble + " = " + (myInt + myDouble));
+		System.out.println("Adding a number and a char: " + myInt + " + " + myChar + " = " + (myInt + myChar));
+		System.out.println("Adding a number and a string: " + myInt + " + " + myString + " = " + (myInt + myString));
 		System.out.println("Dividing two ints: " + myInt + " / 2 = " + myInt / 2);
 		System.out.println(myDouble + " ^ " + myInt + " = " + Math.pow(myDouble, myInt));
 		// Don't do 0/0, else you'll get a floating point exception
-		System.out.println("Weird math: 0/0.0 = " + 0/0.0 + ", sqrt(-1) = "
-				+ Math.sqrt(-1));
+		System.out.println("Weird math: 0/0.0 = " + 0 / 0.0 + ", sqrt(-1) = " + Math.sqrt(-1));
 		formattedStr = String.format("Rounding: %f \u2192 %.2f", myDouble, myDouble);
 		System.out.println(formattedStr);
 		System.out.println();
@@ -160,8 +152,8 @@ public class HowToJava {
 		// &&, ||, and ! behave like normal
 		String hello1 = new String("hello");
 		String hello2 = new String("hello");
-		formattedStr = String.format("%s == %s? %b, %s.equals(%s)? %b", hello1, hello2,
-				hello1 == hello2, hello1, hello2, hello1.equals(hello2));
+		formattedStr = String.format("%s == %s? %b, %s.equals(%s)? %b", hello1, hello2, hello1 == hello2, hello1,
+				hello2, hello1.equals(hello2));
 		System.out.println(formattedStr);
 		System.out.println();
 
@@ -182,7 +174,7 @@ public class HowToJava {
 			num += 2;
 		} while (num < 10);
 
-		for (num = 9; num > 0; num/=2) {
+		for (num = 9; num > 0; num /= 2) {
 			System.out.println(num);
 		}
 
@@ -236,7 +228,7 @@ public class HowToJava {
 		}
 
 		// Classes
-		//SampleClass class0 = new SampleClass(); can't do this, SampleClass is abstract
+		// SampleClass class0 = new SampleClass(); // SampleClass is abstract
 		MathClass class1 = new MathClass(50);
 		EnglishClass class2 = new EnglishClass(30);
 		class1.status();
