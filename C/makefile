@@ -9,8 +9,8 @@ OUTPUTS = $(wildcard *.out) $(wildcard *.o)
 all: $(FILE).out
 
 # $@ = left of colon (target), $< = right of colon (prerequisite), $^ = all prerequisites
-$(FILE).out: $(FILE).c $(FILE).h
-	$(GCC) -o $@ $^ -lm
+$(FILE).out: $(FILE).c
+	$(GCC) -o $@ $< -lm
 
 # Remove all binary files (-f removes error if no files exist)
 clean:
