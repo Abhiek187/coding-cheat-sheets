@@ -3,11 +3,16 @@
 
 recursive_sum () {
     # args = $1 $2 ...
+    CSI="\033[" # control sequence introducer
+    RED="1;31m"
+    YELLOW="1;33m"
+    NC="0m" # no color
+
     if [ $# == 0 ]; then
-        echo "Error: num not provided"
+        echo -e "${CSI}${RED}Error: num not provided${CSI}${NC}"
         return -1 # will underflow to 255
     elif [ $1 -lt 0 ]; then
-        echo "Error: num must be positive"
+        echo -e "${CSI}${YELLOW}Warning: num must be positive${CSI}${NC}"
         return -1
     elif [ $1 == 1 ]; then
         return 1
