@@ -13,7 +13,7 @@ namespace HowToCsharp
         public string name;
         public int grade;
 
-        public Student(string name, int grade=100)
+        public Student(string name, int grade = 100)
         {
             this.name = name;
             this.grade = grade;
@@ -104,7 +104,7 @@ namespace HowToCsharp
     class Program
     {
         // Functions are conventionally Captialized
-        public static void Println(string str="")
+        public static void Println(string str = "")
         {
             Console.WriteLine(str);
         }

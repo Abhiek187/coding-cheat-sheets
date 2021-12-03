@@ -12,19 +12,21 @@
 #include <string>
 #include <vector>
 
-enum class State {
-	calm, // 0
-	rowdy // 1
+enum class State
+{
+    calm, // 0
+    rowdy // 1
 };
 
-struct Student {
-	std::string name { "anonymous" };
-	int grade { 100 };
+struct Student
+{
+    std::string name{"anonymous"};
+    int grade{100};
 };
 
 int add(int a, int b);
 void addPtrs(int *a, int *b, int *&sum);
-int recursiveSum(int num=0);
+int recursiveSum(int num = 0);
 
 template <typename T>
 void printArr(const T *arr, int length);

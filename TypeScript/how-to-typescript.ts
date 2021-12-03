@@ -1,77 +1,91 @@
 enum State {
-	Calm = "calm",
-	Rowdy = "rowdy"
+    Calm = "calm",
+    Rowdy = "rowdy",
 }
 
 interface IClass {
-	status(): void;
+    status(): void;
 }
 
 abstract class SampleClass implements IClass {
-	protected static id: number = 0;
+    protected static id: number = 0;
 
-	// Access modifier declares and initializes member variables (public by default)
-	constructor(private subject: string, private size: number, private state: State) {
-		SampleClass.id++;
-	}
+    // Access modifier declares and initializes member variables (public by default)
+    constructor(
+        private subject: string,
+        private size: number,
+        private state: State
+    ) {
+        SampleClass.id++;
+    }
 
-	abstract toString(): string;
+    abstract toString(): string;
 
-	status = () => {
-		console.log(`This ${this.subject} class has ${this.size} students and is ${this.state}.`);
-	};
+    status = () => {
+        console.log(
+            `This ${this.subject} class has ${this.size} students and is ${this.state}.`
+        );
+    };
 }
 
 class MathClass extends SampleClass {
-	constructor(size: number) {
-		super("Math", size, State.Rowdy);
-		console.log(this.toString());
-	}
+    constructor(size: number) {
+        super("Math", size, State.Rowdy);
+        console.log(this.toString());
+    }
 
-	toString = (): string => `Welcome to math class! You are student #${SampleClass.id}.`;
+    toString = (): string =>
+        `Welcome to math class! You are student #${SampleClass.id}.`;
 }
 
 class EnglishClass extends SampleClass {
-	constructor(size: number) {
-		super("English", size, State.Calm);
-		console.log(this.toString());
-	}
+    constructor(size: number) {
+        super("English", size, State.Calm);
+        console.log(this.toString());
+    }
 
-	toString = (): string => `Welcome to english class! You are student #${SampleClass.id}.`;
+    toString = (): string =>
+        `Welcome to english class! You are student #${SampleClass.id}.`;
 }
 
 const round2 = (num: number): number => Math.round(num * 100) / 100;
-const isTruthy = <T>(v: T): string => !!v ? "truthy" : "falsy";
+const isTruthy = <T>(v: T): string => (!!v ? "truthy" : "falsy");
 
 // Returns a function which returns a number
-const myCounter = (): () => number => {
-	let count = 0; // private variable
-	return () => ++count; // no body = return line
+const myCounter = (): (() => number) => {
+    let count = 0; // private variable
+    return () => ++count; // no body = return line
 };
 
 const sumTo = (num: number): number => {
-	if (num <= 0) {
-		throw "num must be positive";
-	} else if (num === 1) {
-		return 1;
-	} else {
-		return num + sumTo(--num);
-	}
+    if (num <= 0) {
+        throw "num must be positive";
+    } else if (num === 1) {
+        return 1;
+    } else {
+        return num + sumTo(--num);
+    }
 };
 
 // Helper interface for the method below
 interface HasLength {
-	length: number
+    length: number;
 }
 
 // Parameters must have a length property
-const totalLength = <T1 extends HasLength, T2 extends HasLength>(t1: T1, t2: T2): number =>
-	t1.length + t2.length;
+const totalLength = <T1 extends HasLength, T2 extends HasLength>(
+    t1: T1,
+    t2: T2
+): number => t1.length + t2.length;
 
-const genericFunc = (arg1: any=undefined, arg2: any=undefined, ...rest: any[]): void => {
-	console.log(`typeof arg1: ${typeof arg1}, typeof arg2: ${typeof arg2}`);
-	console.log(`rest instanceof Array? ${rest instanceof Array}`); // typeof array === object
-	console.log(`arg1: ${arg1}, arg2: ${arg2}, rest: ${rest}`); // rest defaults to []
+const genericFunc = (
+    arg1: any = undefined,
+    arg2: any = undefined,
+    ...rest: any[]
+): void => {
+    console.log(`typeof arg1: ${typeof arg1}, typeof arg2: ${typeof arg2}`);
+    console.log(`rest instanceof Array? ${rest instanceof Array}`); // typeof array === object
+    console.log(`arg1: ${arg1}, arg2: ${arg2}, rest: ${rest}`); // rest defaults to []
 };
 
 // Execution starts here
@@ -94,14 +108,18 @@ console.log("state: " + state); // string concatenation
 // Math Operations
 console.log(`${myInt} ^ ${myDouble} = ${myInt ** myDouble}`); // string interpolation (better)
 console.log(`Adding two numbers: ${myInt} + ${myDouble} = ${myInt + myDouble}`);
-console.log(`Adding a number with a string: ${myInt} + ${myString} = ${myInt + myString}`);
-console.log(`Weird math: 0/0.0 = ${0/0.0}, sqrt(-1) = ${Math.sqrt(-1)}`);
+console.log(
+    `Adding a number with a string: ${myInt} + ${myString} = ${
+        myInt + myString
+    }`
+);
+console.log(`Weird math: 0/0.0 = ${0 / 0.0}, sqrt(-1) = ${Math.sqrt(-1)}`);
 /*console.log(`{} + {} = ${{} + {}}`); // "[object Object][object Object]"
 console.log(`{} + [] = ${{} + []}`); // 0
 console.log(`[] + {} = ${[] + {}}`); // "[object Object]"
 console.log(`[] + [] = ${[] + []}`); // ""*/
 console.log(`${myString} + ${undVar} = ${myString + undVar}`);
-console.log(`undefined + undefined = ${undVar*2}`);
+console.log(`undefined + undefined = ${undVar * 2}`);
 console.log(`NaN + undefined = ${NaN + undVar}`);
 console.log(`null + undefined = ${nullVar + undVar}`);
 /*console.log(`null + null = ${nullVar*2}`); // 0
@@ -133,15 +151,17 @@ myArray.unshift("s"); // add element to the beginning of the array
 console.log(myArray.toString());
 
 let myArray2: boolean[] = [true, false, false, false, true, false, true];
-myArray2 = myArray2.filter(elem => elem || !elem).map(elem => !!elem); // trivial example, I know :P
-myArray2.forEach((value, index) => console.log(`myArray2[${index}] = ${value}`));
+myArray2 = myArray2.filter((elem) => elem || !elem).map((elem) => !!elem); // trivial example, I know :P
+myArray2.forEach((value, index) =>
+    console.log(`myArray2[${index}] = ${value}`)
+);
 
 const combinedArray: any[] = [...myArray, ...myArray2]; // spread arrays into one
 console.log(combinedArray.join(", "));
 
 const myTuple: [number, boolean, string] = [0, false, "lies"];
 for (const tup of myTuple) {
-	console.log(tup);
+    console.log(tup);
 }
 
 // Functions
@@ -149,7 +169,7 @@ console.log(`The sum from 1 to ${myInt} is ${sumTo(myInt)}.`);
 const counter = myCounter();
 
 for (let i = 0; i < 5; i++) {
-	console.log(counter());
+    console.log(counter());
 }
 
 console.log(`length(myString + myArray) = ${totalLength(myString, myArray)}`);
@@ -164,8 +184,8 @@ genericFunc(bool1, bool2, bools);
 
 // Objects
 const MyObject: object = {
-	name: "anonymous",
-	grade: 100
+    name: "anonymous",
+    grade: 100,
 };
 
 const student = Object.create(MyObject);
@@ -175,11 +195,11 @@ console.log(`${_name} got a ${grade}.`);
 
 // Exception Handling
 try {
-	sumTo(-1);
+    sumTo(-1);
 } catch (err) {
-	console.error(`Error: ${err}`);
+    console.error(`Error: ${err}`);
 } finally {
-	console.log("Finally on to classes!");
+    console.log("Finally on to classes!");
 }
 
 // Classes

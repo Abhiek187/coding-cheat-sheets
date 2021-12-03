@@ -1,151 +1,159 @@
 <!-- Comments look like this -->
 <!DOCTYPE html>
 <html lang="en">
-	<!-- Metadata about the website -->
-	<head>
-		<meta charset="utf-8">
-		<title>How to HTML, CSS, & JavaScript</title> <!-- tab name -->
-		<!-- Make page responsive on all devices -->
-		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-		<link href="../CSS/styles.css" rel="stylesheet"> <!-- link CSS file -->
-	</head>
-	<!-- The content of the website -->
-	<body>
-		<header>
-			<input type="checkbox" id="dark-mode" name="dark-mode" onclick="toggleDarkMode()">
-			<label for="dark-mode">Dark Mode</label> <!-- for must match id -->
-			<br>
-			<h1 id="title">How to HTML, CSS, & JavaScript</h1>
-			<h1 class="h">H1</h1>
-			<h2 class="h">H2</h2>
-			<h3 class="h">H3</h3>
-			<h4 class="h">H4</h4>
-			<h5 class="h">H5</h5>
-			<h6 class="h">H6</h6>
-		</header>
-		<hr>
-		<!-- Input section -->
-		<section>
-			<form>
-				<label>What's your name?</label>
-				<input type="text">
-				<button class="submit-button">Submit</button>
-				<p class="name-response"></p>
-			</form>
-			<label for="option-select">Select an Option:</label>
-			<select id="option-select">
-				<optgroup label="Option Group 1">
-					<option>Option 1</option>
-					<option>Option 2</option>
-				</optgroup>
-				<optgroup label="Option Group 2">
-					<option>Option 3</option>
-					<option>Option 4</option>
-				</optgroup>
-			</select>
-			<br>
-			<label class="free-text-label" for="text-area">Type anything here. We won't judge!</label>
-			<textarea id="text-area" name="free-text" rows="5" cols="30"></textarea>
-		</section>
-		<hr>
-		<main>
-			<p>This is a paragraph.</p>
-			<br>
-			<p>Another paragraph after a line break.</p>
-			<div>
-				<p>A div block</p>
-				<span>This is a span.</span>
-				<span>How good is this font? 1ijlIJ5SoO0</span>
-				<!-- Will show today's date -->
-				<span>Today is...<time datetime="2038-01-19">Tuesday, January 19, 2038</time>.</span>
-				<span>
-					<button type="button" class="alert-button">Alert Button</button>
-				</span>
-			</div>
-			<ol>
-				<li>Ordered List</li>
-				<li>With Numbers</li>
-			</ol>
-			<ul>
-				<li>Unordered List</li>
-				<li>With Bullets</li>
-			</ul>
-			<dl class="data-list">
-				<dt>Data Term</dt>
-				<dd>Data Definition</dd>
-				<dt>Another Term</dt>
-				<dd>Another Definition</dd>
-			</dl>
-			<ul class="tag-list">
-				<li><b>Bold Text</b></li>
-				<li><strong>Strong (Important) Text</strong></li>
-				<li><i>Idiomatic Text</i></li>
-				<li><em>Emphasis</em></li>
-				<li><mark>Marked (Relevant) Text</mark></li>
-				<li><s>Strikethrough</s></li>
-				<li>A<sub>Subscript</sub></li>
-				<li>A<sup>Superscript</sup></li>
-				<li class="underline">Underline Text</li> <!-- don't use <u> tag, apply style in CSS -->
-				<li><pre>I've     got     to     pre.</pre></li>
-			</ul>
-		</main>
-		<hr>
-		<article>
-			<table class="table">
-				<caption class="table-caption">Table Caption</caption>
-				<thead class="table-header">
-					<tr>
-						<th>Table Header 1</th>
-						<th>Table Header 2</th>
-						<th>Table Header 3</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Table Data 1</td>
-						<td>Table Data 2</td>
-						<td>Table Data 3</td>
-					</tr>
-					<tr>
-						<td>Another row</td>
-						<td>of data,</td>
-						<td>hooray!</td>
-					</tr>
-				</tbody>
-				<tfoot class="table-footer">
-					<tr>
-						<td>Footer</td>
-						<td>Row</td>
-						<td>End</td>
-					</tr>
-				</tfoot>
-			</table>
-			<canvas width="300" height="300">A Circle Drawn in Canvas</canvas> <!-- alt text -->
-			<br>
-			<code class="code-block">console.log("Press Ctrl-Shift-J (or Cmd-Opt-J) to open the developer console.");</code>
-			<details class="details">
-				<summary>Show More</summary>
-				<p class="details-text">This message will self-destruct in 3...</p>
-			</details>
-		</article>
-		<hr>
-		<aside>
-			Made with <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and <abbr title="JavaScript">JS</abbr>
-			<br>
-			<!-- blockquote for longer quotes -->
-			<q class="quote">If you can dream it, you can do it. ~ Walt Disney</q>
-		</aside>
-		<hr>
-		<footer>
-			<figure>
-				<img class="html-img" src="img-html.png" alt="HTML Logo">
-				<figcaption class="html-caption">The HTML5 Logo</figcaption>
-			</figure>
-			<a class="link" href="https://github.com/Abhiek187/coding-cheat-sheets/tree/master/HTML" target="_blank" rel="noopener noreferrer">Back to GitHub</a> <!-- opens in a new tab -->
-			<small class="small-text">Legal jargon made so small most users wouldn't read this, but thanks for taking the time to read me. &#9786;</small> <!-- white smiling face -->
-		</footer>
-		<noscript>Is JavaScript enabled?</noscript> <!-- would not be seen on most browsers -->
-		<script src="../JavaScript/app.js"></script> <!-- execute JavaScript file -->
-		<script src="../TypeScript/dist/how-to-typescript.js"></script> <!-- execute ts file -->
-	</body>
+
+<head>
+    <!-- Metadata about the website -->
+    <meta charset="utf-8">
+    <title>How to HTML, CSS, & JavaScript</title> <!-- tab name -->
+    <!-- Make page responsive on all devices -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link href="../CSS/styles.css" rel="stylesheet"> <!-- link CSS file -->
+</head>
+
+<body>
+    <!-- The content of the website -->
+    <header>
+        <input type="checkbox" id="dark-mode" name="dark-mode" onclick="toggleDarkMode()">
+        <label for="dark-mode">Dark Mode</label> <!-- for must match id -->
+        <br>
+        <h1 id="title">How to HTML, CSS, & JavaScript</h1>
+        <h1 class="h">H1</h1>
+        <h2 class="h">H2</h2>
+        <h3 class="h">H3</h3>
+        <h4 class="h">H4</h4>
+        <h5 class="h">H5</h5>
+        <h6 class="h">H6</h6>
+    </header>
+    <hr>
+    <!-- Input section -->
+    <section>
+        <form>
+            <label>What's your name?</label>
+            <input type="text">
+            <button class="submit-button">Submit</button>
+            <p class="name-response"></p>
+        </form>
+        <label for="option-select">Select an Option:</label>
+        <select id="option-select">
+            <optgroup label="Option Group 1">
+                <option>Option 1</option>
+                <option>Option 2</option>
+            </optgroup>
+            <optgroup label="Option Group 2">
+                <option>Option 3</option>
+                <option>Option 4</option>
+            </optgroup>
+        </select>
+        <br>
+        <label class="free-text-label" for="text-area">Type anything here. We won't judge!</label>
+        <textarea id="text-area" name="free-text" rows="5" cols="30"></textarea>
+    </section>
+    <hr>
+    <main>
+        <p>This is a paragraph.</p>
+        <br>
+        <p>Another paragraph after a line break.</p>
+        <div>
+            <p>A div block</p>
+            <span>This is a span.</span>
+            <span>How good is this font? 1ijlIJ5SoO0</span>
+            <!-- Will show today's date -->
+            <span>Today is...<time datetime="2038-01-19">Tuesday, January 19, 2038</time>.</span>
+            <span>
+                <button type="button" class="alert-button">Alert Button</button>
+            </span>
+        </div>
+        <ol>
+            <li>Ordered List</li>
+            <li>With Numbers</li>
+        </ol>
+        <ul>
+            <li>Unordered List</li>
+            <li>With Bullets</li>
+        </ul>
+        <dl class="data-list">
+            <dt>Data Term</dt>
+            <dd>Data Definition</dd>
+            <dt>Another Term</dt>
+            <dd>Another Definition</dd>
+        </dl>
+        <ul class="tag-list">
+            <li><b>Bold Text</b></li>
+            <li><strong>Strong (Important) Text</strong></li>
+            <li><i>Idiomatic Text</i></li>
+            <li><em>Emphasis</em></li>
+            <li><mark>Marked (Relevant) Text</mark></li>
+            <li><s>Strikethrough</s></li>
+            <li>A<sub>Subscript</sub></li>
+            <li>A<sup>Superscript</sup></li>
+            <li class="underline">Underline Text</li> <!-- don't use <u> tag, apply style in CSS -->
+            <li>
+                <pre>I've     got     to     pre.</pre>
+            </li>
+        </ul>
+    </main>
+    <hr>
+    <article>
+        <table class="table">
+            <caption class="table-caption">Table Caption</caption>
+            <thead class="table-header">
+                <tr>
+                    <th>Table Header 1</th>
+                    <th>Table Header 2</th>
+                    <th>Table Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Table Data 1</td>
+                    <td>Table Data 2</td>
+                    <td>Table Data 3</td>
+                </tr>
+                <tr>
+                    <td>Another row</td>
+                    <td>of data,</td>
+                    <td>hooray!</td>
+                </tr>
+            </tbody>
+            <tfoot class="table-footer">
+                <tr>
+                    <td>Footer</td>
+                    <td>Row</td>
+                    <td>End</td>
+                </tr>
+            </tfoot>
+        </table>
+        <canvas width="300" height="300">A Circle Drawn in Canvas</canvas> <!-- alt text -->
+        <br>
+        <code class="code-block">console.log("Press Ctrl-Shift-J (or Cmd-Opt-J) to open the developer console.");</code>
+        <details class="details">
+            <summary>Show More</summary>
+            <p class="details-text">This message will self-destruct in 3...</p>
+        </details>
+    </article>
+    <hr>
+    <aside>
+        Made with <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>,
+        and <abbr title="JavaScript">JS</abbr>
+        <br>
+        <!-- blockquote for longer quotes -->
+        <q class="quote">If you can dream it, you can do it. ~ Walt Disney</q>
+    </aside>
+    <hr>
+    <footer>
+        <figure>
+            <img class="html-img" src="img-html.png" alt="HTML Logo">
+            <figcaption class="html-caption">The HTML5 Logo</figcaption>
+        </figure>
+        <a class="link" href="https://github.com/Abhiek187/coding-cheat-sheets/tree/main/HTML" target="_blank"
+            rel="noopener noreferrer">Back to GitHub</a> <!-- opens in a new tab -->
+        <small class="small-text">Legal jargon made so small most users wouldn't read this, but thanks for taking the
+            time to read me. &#9786;</small> <!-- white smiling face -->
+    </footer>
+    <noscript>Is JavaScript enabled?</noscript> <!-- would not be seen on most browsers -->
+    <script src="../JavaScript/app.js"></script> <!-- execute JavaScript file -->
+    <script src="../TypeScript/dist/how-to-typescript.js"></script> <!-- execute ts file -->
+</body>
+
 </html>
