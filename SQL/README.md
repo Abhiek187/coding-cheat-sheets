@@ -6,7 +6,7 @@ SQL (pronounced as either S-Q-L or SEQUEL) is a language used for relational dat
 
 ## How to Run
 
-SQLite is the most lightweight database engine, so we'll use that to run the SQL script. Install [SQLite](https://www.sqlite.org/download.html), then run `sqlite3 db.sqlite3 < HowToSQL.sql`.
+SQLite is the most lightweight database engine, so we'll use that to run the SQL script. Install [SQLite](https://www.sqlite.org/download.html), then run `sqlite3 db.sqlite3 < HowToSQL.sql`. Note that the database file can be named anything, but `db.sqlite3` will be ignored by Git.
 
 You can also run the file within sqlite3 by running the following:
 
