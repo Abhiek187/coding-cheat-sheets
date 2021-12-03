@@ -1,56 +1,56 @@
 require "cmath"
 
 def sum_to(n=1)
-	if n < 1
-		raise ArgumentError.new("n must be positive")
-	end
+    if n < 1
+        raise ArgumentError.new("n must be positive")
+    end
 
-	if n == 1 then n else n + sum_to(n - 1) end
+    if n == 1 then n else n + sum_to(n - 1) end
 end
 
 def generic_func(*args)
-	puts "#{args}"
+    puts "#{args}"
 end
 
 module ClassModule
-	def to_string(subject, id)
-		"Welcome to #{subject} class! You are student \##{id}."
-	end
+    def to_string(subject, id)
+        "Welcome to #{subject} class! You are student \##{id}."
+    end
 end
 
 class SampleClass
-	include ClassModule # include = non-static, extend = static
-	attr_accessor :subject # read+write access
-	attr_accessor :size
-	@@id = 0 # static
+    include ClassModule # include = non-static, extend = static
+    attr_reader :subject # reader == r, writer == w, accessor == r+w
+    attr_reader :size
+    @@id = 0 # static
 
-	def initialize(subject, size)
-		@subject = subject # instance
-		@size = size
-		@@id += 1
-	end
+    def initialize(subject, size)
+        @subject = subject # instance
+        @size = size
+        @@id += 1
+    end
 
-	def to_s # toString()
-		to_string(@subject, @@id)
-	end
+    def to_s # toString()
+        to_string(@subject, @@id)
+    end
 
-	def status
-		puts "This #{@subject} class has #{@size} students."
-	end
+    def status
+        puts "This #{@subject} class has #{@size} students."
+    end
 end
 
 class MathClass < SampleClass
-	def initialize(size)
-		super("math", size)
-		puts self
-	end
+    def initialize(size)
+        super("math", size)
+        puts self
+    end
 end
 
 class EnglishClass < SampleClass
-	def initialize(size)
-		super("english", size)
-		puts self
-	end
+    def initialize(size)
+        super("english", size)
+        puts self
+    end
 end
 
 =begin
@@ -88,42 +88,42 @@ puts "\n"
 
 # Conditional Operators & Loops
 if my_double < 0
-	puts "my_double is negative"
+    puts "my_double is negative"
 elsif my_double > 0
-	puts "my_double is positive"
+    puts "my_double is positive"
 else
-	puts "my_double is 0"
+    puts "my_double is 0"
 end
 
 unless my_double.to_i % 2 == 0 # unless == if !...
-	puts "my_double as an int (#{my_double.to_i}) is odd"
+    puts "my_double as an int (#{my_double.to_i}) is odd"
 end
 
 for i in 1...10 # one less dot includes 10
-	next if i % 3 == 0
-	puts i
+    next if i % 3 == 0 # next == continue
+    puts i
 end
 
 if ARGV.length > 0
-	for i in 0...ARGV.length
-		puts "ARGV[#{i}] = #{ARGV[i]}"
-	end
+    for i in 0...ARGV.length
+        puts "ARGV[#{i}] = #{ARGV[i]}"
+    end
 else
-	puts "Hmm, you didn't enter any command line arguments."
+    puts "Hmm, you didn't enter any command line arguments."
 end
 
 i = 5
 until i <= 0 # until == while !...
-	puts i
-	i -= 1
-	break if i == 2
+    puts i
+    i -= 1
+    break if i == 2
 end
 
 case i
-	when 2
-		puts "I stopped at 2"
-	else
-		puts "I stopped at 0"
+    when 2
+        puts "I stopped at 2"
+    else
+        puts "I stopped at 0"
 end
 
 3.times { print "Ruby is " }
@@ -142,25 +142,26 @@ puts "\n"
 # Arrays & Hashes
 my_array = [0, "is", false]
 my_array << []
+puts "my_array[-1] = #{my_array[-1]}"
 my_array.each { |elem| puts "#{elem}" }
 
 my_hash = Hash.new # empty hash
 my_hash = { # hash with symbolic keys
-	:id => 1000101,
-	name: "Joe"
+    :id => 1000101,
+    name: "Joe"
 }
 
 my_hash.each do |key, value|
-	puts "#{key} = #{value}"
+    puts "#{key} = #{value}"
 end
 
 # Exception Handling
 begin
-	sum_to(-1)
+    sum_to(-1)
 rescue ArgumentError => msg
-	puts "Error: #{msg}"
+    puts "Error: #{msg}"
 ensure
-	puts "\n"
+    puts "\n"
 end
 
 # Classes
