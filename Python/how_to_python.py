@@ -6,13 +6,14 @@ import sys
 def fibonacci(n=1):
     """
     Returns the nth fibonacci number
+
     :param n: the number of calculations
     :return the fibonacci number at each iteration
     """
     a = 0
     b = 1
 
-    for i in range(n):
+    for _ in range(n):
         yield a
         a, b = b, a + b
 
@@ -20,7 +21,7 @@ def fibonacci(n=1):
 def generic_func(*args, **kwargs):
     print(args)
     print(kwargs)
-    print("I would like {} {}\n".format(args[0], kwargs['food']))
+    print("I would like {} {}\n".format(args[0], kwargs["food"]))
 
 
 # Classes
@@ -50,7 +51,8 @@ class English(MyClass):
         self.size = size
 
     def status(self):
-        print(f"This {self.subject} class is {MyClass.static_variable}. There are {self.size} students in total.")
+        print(
+            f"This {self.subject} class is {MyClass.static_variable}. There are {self.size} students in total.")
 
 
 class Math(MyClass):
@@ -59,7 +61,8 @@ class Math(MyClass):
         self.size = size
 
     def status(self):
-        print(f"This {self.subject} class is {MyClass.static_variable}. There are {self.size} students in total.")
+        print(
+            f"This {self.subject} class is {MyClass.static_variable}. There are {self.size} students in total.")
 
 
 def check_status(my_class):
@@ -72,14 +75,14 @@ if __name__ == "__main__":
     print(hello_world)
     print(f"By the way, you're using Python version {sys.version}\n")
 
-    '''
+    """
     Each part of the program will be split into sections like these.
-    '''
+    """
     # Variables
     my_int = 187
     my_float = 98.5
     my_string = "Don't worry about apostrophes with double quotes. "
-    x, y = 'two', 'three'
+    x, y = "two", "three"
     my_bool = True
     null_var = None
 
@@ -91,8 +94,9 @@ if __name__ == "__main__":
     print("I can print two values simultaneously like this: " + x, y)
     #  print("But don't do this: " + myInt + myString)
     print("I can also insert variables like this %d, or that %.2f, or even this: %s" % (my_int,
-        my_float, my_string))
-    print("Another way to print {s} {s} {s} {s} {f:10.4f}".format(s='SPAM', f=my_float))
+                                                                                        my_float, my_string))
+    print("Another way to print {s} {s} {s} {s} {f:10.4f}".format(
+        s="SPAM", f=my_float))
     print(f"A variable that's null: {null_var}")
     print()  # just a newline
 
@@ -101,7 +105,8 @@ if __name__ == "__main__":
     power = 2 ** 10
     print(f"number = {number}")
     print(f"power = {power}")
-    print(f"Adding a number with a bool: {my_float} + {my_bool} = {my_float + my_bool}")
+    print(
+        f"Adding a number with a bool: {my_float} + {my_bool} = {my_float + my_bool}")
     print(f"({power} / {number}) Float division: {power / number} vs. Int division: {power // number}")
     print(f"Yes even % works: {power} % {number} = {power % number}")
     # Don't do 0/0.0 or sqrt(-1)
@@ -113,7 +118,7 @@ if __name__ == "__main__":
     my_list_2 = [1, 2, 3, 5, 8]
     my_list.append(3)
     my_list.extend([2, 1])
-    my_list.pop(-2) # or my_list.remove(2)
+    my_list.pop(-2)  # or my_list.remove(2)
     my_list.sort()
     for number in my_list:
         print(number)
@@ -125,7 +130,8 @@ if __name__ == "__main__":
     print("What language was this again? " + hello_world[6:12:1])
     print("Say it again, but backwards: " + hello_world[::-1])
     print("I'm shouting: " + hello_world.upper())
-    print("Does myString end with tes? %s" % (my_string.endswith("tes")) + '\n')
+    print("Does myString end with tes? %s" %
+          (my_string.endswith("tes")) + "\n")
 
     print(my_list + my_list_2)
     print(my_list * 3)
@@ -172,7 +178,7 @@ if __name__ == "__main__":
     # Declaring Functions
     help(fibonacci)
     for num in fibonacci(10):
-        print(f"{num} ", end='') # print without a newline
+        print(f"{num} ", end="")  # print without a newline
     print()
     generic_func(10, 20, 30, food="spaghetti", animal="dog")
 
@@ -213,14 +219,14 @@ if __name__ == "__main__":
     print(f"False first appears at index {my_tuple.index(False)}\n")
 
     # Sets
-    my_set_1 = set('Mississippi')
+    my_set_1 = set("Mississippi")
     my_set_1.add(2)
     my_set_1.add(1)
     my_set_1.add(1)
     my_set_1.remove(2)
-    my_set_1.discard('z') # z doesn't exist
+    my_set_1.discard("z")  # z doesn't exist
     print(f"set1 = {my_set_1}")
-    my_set_2 = set('Minneapolis')
+    my_set_2 = set("Minneapolis")
     print(f"set2 = {my_set_2}")
     print(f"set1 | set2 = {my_set_1.union(my_set_2)}")
     print(f"set1 & set2 = {my_set_1.intersection(my_set_2)}")
