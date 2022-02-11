@@ -1,5 +1,10 @@
 require "cmath"
 
+# Recursively sums from 1 to `n`.
+#
+# @param n [Int] the upper limit of the sum (inclusive)
+# @return the sum from 1 to `n`
+# @raise [ArgumentError] if `n` is non-positive
 def sum_to(n=1)
     if n < 1
         raise ArgumentError.new("n must be positive")

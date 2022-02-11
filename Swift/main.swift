@@ -129,6 +129,13 @@ func **(lhs: Double, rhs: Double) -> Double {
     return pow(lhs, rhs)
 }
 
+/// Recursively sums from 1 to `num`.
+///
+/// - Throws: `Exception` if `num` is non-positive
+///
+/// - Parameter num: the upper limit of the sum (inclusive)
+///
+/// - Returns: the sum from 1 to `num`
 func sumTo(_ num: Int=1) throws -> Int {
     if num <= 0 {
         throw "num must be positive"

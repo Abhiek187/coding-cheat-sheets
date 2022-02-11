@@ -77,6 +77,11 @@ infix fun Int.`**`(exponent: Double): Double = toDouble().pow(exponent)
 infix fun Double.`**`(exponent: Int): Double = this.pow(exponent)
 infix fun Double.`**`(exponent: Double): Double = this.pow(exponent)
 
+/**
+ * Recursively sums from 1 to [num].
+ * 
+ * @throws IllegalArgumentException if [num] is non-positive
+ */
 fun sumTo(num: Int=1): Int {
     return if (num <= 0) {
         throw IllegalArgumentException("num must be positive")

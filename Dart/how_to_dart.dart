@@ -79,6 +79,9 @@ class EnglishClass extends SampleClass {
       'Welcome to english class! You are student #${SampleClass._id}.';
 }
 
+/// Recursively sums from 1 to [num].
+///
+/// Throws an [Exception] if [num] is non-positive.
 int recursiveSum(int num) {
   if (num <= 0) {
     throw 'num must be positive';

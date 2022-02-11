@@ -57,6 +57,13 @@ const myCounter = (): (() => number) => {
     return () => ++count; // no body = return line
 };
 
+/**
+ * Recursively sums from 1 to `num`.
+ *
+ * @param {number} num - the upper limit of the sum (inclusive)
+ * @returns {number} the sum from 1 to `num`
+ * @throws {Exception} if `num` is non-positive
+ */
 const sumTo = (num: number): number => {
     if (num <= 0) {
         throw "num must be positive";

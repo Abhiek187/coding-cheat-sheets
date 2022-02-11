@@ -74,6 +74,13 @@ public class HowToJava {
         System.out.println(str);
     }
 
+    /**
+     * Recursively sums from 1 to <code>num</code>.
+     * 
+     * @param num the upper limit of the sum (inclusive)
+     * @return the sum from 1 to <code>num</code>
+     * @throws IllegalArgumentException if <code>num</code> is non-positive
+     */
     public static int recursiveSum(int num) throws IllegalArgumentException {
         if (num <= 0) {
             throw new IllegalArgumentException("num must be positive");

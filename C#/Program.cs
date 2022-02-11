@@ -112,6 +112,14 @@ namespace HowToCsharp
         {
             sum = a + b; // ref if we need to read sum
         }
+        /// <summary>
+        /// Recursively sums from 1 to <c>num</c>.
+        /// </summary>
+        /// <param name="num">The upper limit of the sum (inclusive)</param>
+        /// <returns>
+        /// The sum from 1 to <c>num</c>
+        /// </returns>
+        /// <exception cref="ArgumentException">if <c>num</c> is non-positive</exception>
         static int RecursiveSum(int num)
         {
             if (num <= 0)
