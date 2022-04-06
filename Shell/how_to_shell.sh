@@ -103,7 +103,6 @@ done
 echo ""
 
 # Functions & Methods
-# `evaluate expression as a string`
 echo "$MY_STRING is ${#MY_STRING} characters long."
 echo "substring(1, 8): ${MY_STRING:1:8}" # {string:start:length}
 # parameter%%pattern: remove everything after 's'
