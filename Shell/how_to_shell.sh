@@ -3,10 +3,10 @@
 
 recursive_sum () {
     # args = $1 $2 ...
-    CSI="\033[" # control sequence introducer
-    RED="1;31m"
-    YELLOW="1;33m"
-    NC="0m" # no color
+    local CSI="\033[" # control sequence introducer
+    local RED="1;31m"
+    local YELLOW="1;33m"
+    local NC="0m" # no color
 
     if [ $# == 0 ]; then
         echo -e "${CSI}${RED}Error: num not provided${CSI}${NC}"
