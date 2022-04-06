@@ -103,11 +103,12 @@ done
 echo ""
 
 # Functions & Methods
-STR_LENGTH=`echo $MY_STRING | wc -m` # `evaluate expression as a string`
-echo "$MY_STRING is $STR_LENGTH characters long."
+# `evaluate expression as a string`
+echo "$MY_STRING is ${#MY_STRING} characters long."
 echo "substring(1, 8): ${MY_STRING:1:8}" # {string:start:length}
-STR_INDEX_OF=`echo $MY_STRING | grep -bo 's'`
-echo "indexOf('s'): $STR_INDEX_OF"
+# parameter%%pattern: remove everything after 's'
+STR_INDEX_OF="${MY_STRING%%s*}"
+echo "indexOf('s'): ${#STR_INDEX_OF}"
 
 recursive_sum
 echo "recursive_sum() = $?" # $? = return value
@@ -121,4 +122,5 @@ echo ""
 # Arrays
 MY_ARRAY=(3 -4 8 -5 0 9 -1)
 MY_ARRAY[2]="cheese"
+echo "MY_ARRAY.length = ${#MY_ARRAY[@]}"
 echo "MY_ARRAY = ${MY_ARRAY[*]}" # see comment above about * vs @
