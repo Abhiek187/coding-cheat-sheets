@@ -32,8 +32,7 @@ echo "By the way, you're using this shell:"
 $SHELL --version
 
 # Variables
-MY_INT=-83
-readonly MY_INT # make the variable constant
+declare -ir MY_INT=-83 # make the variable an integer and readonly (constant)
 MY_DOUBLE=7.55555
 MY_BOOL=true
 MY_STRING="This is a string."
