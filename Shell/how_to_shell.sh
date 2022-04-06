@@ -22,6 +22,10 @@ recursive_sum () {
     fi
 }
 
+sig_handler () {
+    echo "Received SIGUSR1"
+}
+
 # No main function here!
 echo "Hello Shell!"
 echo "By the way, you're using this shell:"
@@ -123,3 +127,8 @@ MY_ARRAY=(3 -4 8 -5 0 9 -1)
 MY_ARRAY[2]="cheese"
 echo "MY_ARRAY.length = ${#MY_ARRAY[@]}"
 echo "MY_ARRAY = ${MY_ARRAY[*]}" # see comment above about * vs @
+echo ""
+
+# Signals
+trap sig_handler SIGUSR1
+kill -USR1 $$
