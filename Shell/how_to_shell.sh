@@ -40,7 +40,7 @@ NULL_VAR=""
 unset NULL_VAR # remove the variable
 
 # Input/Output
-printf "What's your name? " # don't print a newline
+echo -n "What's your name? " # don't print a newline
 read NAME
 echo "Hey $NAME!"
 echo "NULL_VAR=${NULL_VAR:-"null"}" # :- == ?:
