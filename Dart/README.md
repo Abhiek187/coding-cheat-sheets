@@ -8,7 +8,7 @@ Dart is an open-source language developed by Google. It's primarily used with Fl
 
 Follow the steps [here](https://dart.dev/get-dart) to install Dart. Installing Flutter is optional for this program. Once you're all set up, run the following command:
 
-```
+```bash
 dart how_to_dart.dart
 ```
 

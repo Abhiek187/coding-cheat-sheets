@@ -10,7 +10,7 @@ SQLite is the most lightweight database engine, so we'll use that to run the SQL
 
 You can also run the file within sqlite3 by running the following:
 
-```
+```bash
 sqlite3 db.sqlite3
 .read HowToSQL.sql
 ```

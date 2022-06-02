@@ -8,13 +8,13 @@ Kotlin is one of the newest languages on this list. It was released to the publi
 
 Follow the steps [here](https://kotlinlang.org/docs/tutorials/command-line.html) to install Kotlin. Then run the following command:
 
-```
+```bash
 kotlinc -script HowToKotlin.kts
 ```
 
 Note that I chose a `.kts` file for scripting purposes. It's also faster than compiling to a `.jar` file. If you were working with a `.kt` file, you would run the following:
 
-```
+```bash
 kotlinc HowToKotlin.kt -include-runtime -d <OUTPUT>.jar
 java -jar <OUTPUT>.jar
 ```

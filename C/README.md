@@ -8,7 +8,7 @@ C is one of the oldest programming languages out there, dating back to 1972. Des
 
 Follow the steps [here](https://www.guru99.com/c-gcc-install.html) to install gcc, a C compiler. A makefile is included to make compiling easier. Once you're all set up, run the following commands:
 
-```
+```bash
 make all
 ./HowToC.out
 ```

@@ -8,7 +8,7 @@ While it was built off of C, C# is a much different language compared to C or C+
 
 Since C# is affiliated with Microsoft, these files run best on Windows. Follow the steps [here](https://www.geeksforgeeks.org/hello-world-in-c-sharp/) to execute on a Windows machine. Outside Windows, you would need to install [Mono](https://www.tutorialspoint.com/executing-chash-code-in-linux) and run the following commands:
 
-```
+```bash
 mcs Program.cs
 mono Program.exe
 ```

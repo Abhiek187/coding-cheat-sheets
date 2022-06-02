@@ -8,7 +8,7 @@ Java is the first language I learned as it's the language many introductory coll
 
 You will need to [install Java](https://www.java.com/en/) and save the path to an [environment variable](https://www.java.com/en/download/help/path.xml). Make sure you're running Java 8+. From there, run the following lines:
 
-```
+```bash
 javac HowToJava.java
 java HowToJava
 ```

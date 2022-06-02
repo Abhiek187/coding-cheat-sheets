@@ -10,7 +10,7 @@ As you might expect, Swift applications work best on Macs. You can download Xcod
 
 If you do have Swift installed, run the following commands:
 
-```
+```bash
 make all
 ./main.out
 ```

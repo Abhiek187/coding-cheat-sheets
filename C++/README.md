@@ -8,7 +8,7 @@ C++ is an object-oriented extension of the C language created by Bjarne Stroustr
 
 Follow the steps [here](https://www.guru99.com/c-gcc-install.html) to install a C++ compiler. Note that these are the same instructions as in C. gcc can be used to compile C++ files, but g++ is recommended. A makefile is included to make compiling easier. Once you're all set up, run the following commands:
 
-```
+```bash
 make all
 ./HowToC++.out
 ```
