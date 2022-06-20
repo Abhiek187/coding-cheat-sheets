@@ -181,9 +181,9 @@ canvas {
     font-style: italic;
 }
 
-.html-img {
+/* .html-img {
     width: 10%;
-}
+} */
 
 .html-img.dark {
     background-color: lightgray;
@@ -191,9 +191,9 @@ canvas {
 
 @media screen and (max-width: 700px) {
     /* Rules for screen sizes <= 700px */
-    .html-img {
+    /* .html-img {
         width: 20%;
-    }
+    } */
 }
 
 .html-caption {
@@ -214,3 +214,36 @@ canvas {
 .small-text {
     margin-left: 5%;
 }
+
+/*
+Flexbox (from https://flexboxfroggy.com/):
+Parent:
+display: flex
+flex-direction: the direction of each child in the flexbox, row by default [row, row-reverse, column, column-reverse]
+justify-content: align items parallel to the flex direction, horizontal by default [flex-start, flex-end, center, space-between, space-around]
+align-items: align items perpendicular to the flex direction, vertical by default [flex-start, flex-end, center, baseline, stretch]
+flex-wrap: wrap items to additional lines [nowrap, wrap, wrap-reverse]
+flex-flow: flex-direction flex-wrap
+align-content: spacing between items when wrapped [flex-start, flex-end, center, space-between, space-around, stretch]
+
+Child:
+order: the order of each child in the flexbox (negative before, positive after)
+align-self: individual equivalent of align-items
+
+Grid (from https://cssgridgarden.com/):
+Parent:
+display: grid
+grid-template-rows: set # and height of each row, use fr to occupy any remaining space, repeat(n, size) repeats size n times
+grid-template-columns: set # and width of each column
+grid-template: grid-template-rows / grid-template-columns
+
+Child:
+grid-row-start: row the content starts, indexes start at 1 (inclusive)
+grid-row-end: row the content ends, grid-row-start + 1 by default, can be negative, can use span to specify the number of rows to fill (non-inclusive)
+grid-row: grid-row-start / grid-row-end
+grid-column-start: column the content starts (inclusive)
+grid-column-end: column the content ends, grid-column-start + 1 by default, can use span to specify the number of columns to fill (non-inclusive)
+grid-column: grid-column-start / grid-column-end
+grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end
+order: the order of each child in the grid
+*/

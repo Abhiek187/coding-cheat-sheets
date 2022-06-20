@@ -7,8 +7,12 @@
     <meta charset="utf-8">
     <title>How to HTML, CSS, & JavaScript</title> <!-- tab name -->
     <!-- Make page responsive on all devices -->
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="How to HTML site">
     <link href="../CSS/styles.css" rel="stylesheet"> <!-- link CSS file -->
+    <!-- Download the script files and execute them after the DOM is parsed -->
+    <script defer src="../JavaScript/app.js"></script> <!-- JS file -->
+    <script defer src="../TypeScript/dist/how-to-typescript.js"></script> <!-- TS file -->
 </head>
 
 <body>
@@ -29,8 +33,8 @@
     <!-- Input section -->
     <section>
         <form>
-            <label>What's your name?</label>
-            <input type="text">
+            <label for="name-text">What's your name?</label>
+            <input type="text" id="name-text">
             <button class="submit-button">Submit</button>
             <p class="name-response"></p>
         </form>
@@ -143,7 +147,7 @@
     <hr>
     <footer>
         <figure>
-            <img class="html-img" src="img-html.png" alt="HTML Logo">
+            <img class="html-img" src="img-html.png" alt="HTML Logo" width="60" height="60">
             <figcaption class="html-caption">The HTML5 Logo</figcaption>
         </figure>
         <a class="link" href="https://github.com/Abhiek187/coding-cheat-sheets/tree/main/HTML" target="_blank"
@@ -152,8 +156,6 @@
             time to read me. &#9786;</small> <!-- white smiling face -->
     </footer>
     <noscript>Is JavaScript enabled?</noscript> <!-- would not be seen on most browsers -->
-    <script src="../JavaScript/app.js"></script> <!-- execute JavaScript file -->
-    <script src="../TypeScript/dist/how-to-typescript.js"></script> <!-- execute ts file -->
 </body>
 
 </html>
