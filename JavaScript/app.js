@@ -66,7 +66,8 @@ details.addEventListener(
                     detailsText.textContent += "1...";
                     break;
                 default:
-                    detailsText.textContent = "\u{1F4A5}\u{1F4A3}\u{1F4A5}"; // explosions!
+                    // Explosions!
+                    detailsText.textContent = "\u{1F4A5}\u{1F4A3}\u{1F4A5}";
                     clearInterval(interval); // stop animation there
             }
         };
@@ -149,7 +150,8 @@ const drawCircle = (color) => {
 
     context.beginPath();
     context.strokeStyle = color;
-    context.arc(center.x, center.y, 100, 0, 2 * Math.PI); // x, y, radius, start & end angle
+    // x, y, radius, start & end angle
+    context.arc(center.x, center.y, canvas.width * 0.4, 0, 2 * Math.PI);
     context.fillStyle = color;
     context.fill();
     context.stroke();

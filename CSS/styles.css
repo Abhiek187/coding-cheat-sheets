@@ -181,19 +181,16 @@ canvas {
     font-style: italic;
 }
 
-/* .html-img {
-    width: 10%;
-} */
-
 .html-img.dark {
     background-color: lightgray;
 }
 
-@media screen and (max-width: 700px) {
-    /* Rules for screen sizes <= 700px */
-    /* .html-img {
-        width: 20%;
-    } */
+@media screen and (max-width: 420px) {
+    /* Rules for screen sizes <= 420px */
+    .name-form {
+        display: grid;
+        grid-gap: 10px;
+    }
 }
 
 .html-caption {
