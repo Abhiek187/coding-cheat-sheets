@@ -213,34 +213,129 @@ canvas {
 }
 
 /*
-Flexbox (from https://flexboxfroggy.com/):
+Flexbox (from https://flexboxfroggy.com/)
 Parent:
-display: flex
-flex-direction: the direction of each child in the flexbox, row by default [row, row-reverse, column, column-reverse]
-justify-content: align items parallel to the flex direction, horizontal by default [flex-start, flex-end, center, space-between, space-around]
-align-items: align items perpendicular to the flex direction, vertical by default [flex-start, flex-end, center, baseline, stretch]
-flex-wrap: wrap items to additional lines [nowrap, wrap, wrap-reverse]
-flex-flow: flex-direction flex-wrap
-align-content: spacing between items when wrapped [flex-start, flex-end, center, space-between, space-around, stretch]
+- display: flex
+- flex-direction: the direction of each child in the flexbox, row by default
+    [row, row-reverse, column, column-reverse]
+- justify-content: align items parallel to the flex direction, horizontal by default
+    [flex-start, flex-end, center, space-between, space-around]
+- align-items: align items perpendicular to the flex direction, vertical by default
+    [flex-start, flex-end, center, baseline, stretch]
+- flex-wrap: wrap items to additional lines [nowrap, wrap, wrap-reverse]
+- flex-flow: flex-direction flex-wrap
+- align-content: spacing between items when wrapped
+    [flex-start, flex-end, center, space-between, space-around, stretch]
 
 Child:
-order: the order of each child in the flexbox (negative before, positive after)
-align-self: individual equivalent of align-items
-
-Grid (from https://cssgridgarden.com/):
-Parent:
-display: grid
-grid-template-rows: set # and height of each row, use fr to occupy any remaining space, repeat(n, size) repeats size n times
-grid-template-columns: set # and width of each column
-grid-template: grid-template-rows / grid-template-columns
-
-Child:
-grid-row-start: row the content starts, indexes start at 1 (inclusive)
-grid-row-end: row the content ends, grid-row-start + 1 by default, can be negative, can use span to specify the number of rows to fill (non-inclusive)
-grid-row: grid-row-start / grid-row-end
-grid-column-start: column the content starts (inclusive)
-grid-column-end: column the content ends, grid-column-start + 1 by default, can use span to specify the number of columns to fill (non-inclusive)
-grid-column: grid-column-start / grid-column-end
-grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end
-order: the order of each child in the grid
+- order: the order of each child in the flexbox (negative before, positive after)
+- align-self: individual equivalent of align-items
 */
+.section-fvg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flexbox,
+.grid {
+    flex: 3;
+}
+
+.vs {
+    flex: 1;
+    text-align: center;
+}
+
+.flexbox {
+    display: flex;
+    flex-direction: column;
+}
+
+/* All except the first child of flexbox */
+.flexbox > *:not(:first-child) {
+    background-color: black;
+    height: 33px;
+}
+
+.flexbox-1 {
+    align-self: stretch;
+    text-align: center;
+}
+
+.flexbox-2 {
+    align-self: flex-start;
+    width: 20%;
+}
+
+.flexbox-3 {
+    align-self: center;
+    width: 50%;
+}
+
+.flexbox-4 {
+    align-self: flex-end;
+    width: 20%;
+}
+
+/*
+Grid (from https://cssgridgarden.com/)
+Parent:
+- display: grid
+- grid-template-rows: set # and height of each row, use fr to occupy any remaining space,
+    repeat(n, size) repeats size n times
+- grid-template-columns: set # and width of each column
+- grid-template: grid-template-rows / grid-template-columns
+
+Child:
+- grid-row-start: row the content starts, indexes start at 1 (inclusive)
+- grid-row-end: row the content ends, grid-row-start + 1 by default, can be negative,
+    can use span to specify the number of rows to fill (non-inclusive)
+- grid-row: grid-row-start / grid-row-end
+- grid-column-start: column the content starts (inclusive)
+- grid-column-end: column the content ends, grid-column-start + 1 by default,
+    can use span to specify the number of columns to fill (non-inclusive)
+- grid-column: grid-column-start / grid-column-end
+- grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end
+- order: the order of each child in the grid
+*/
+.grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    gap: 5px;
+    grid-auto-rows: auto;
+}
+
+.grid > *:not(:first-child) {
+    background-color: black;
+}
+
+.grid-1 {
+    grid-column-end: span 4;
+    text-align: center; /* center horizontally */
+    align-self: center; /* center vertically */
+}
+
+.grid-2 {
+    grid-row: 2 / span 2;
+}
+
+.grid-3 {
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.grid-4 {
+    grid-row-start: 2;
+    grid-column: 3 / span 2;
+}
+
+.grid-5 {
+    grid-row-start: 3;
+    grid-column: 2 / span 2;
+}
+
+.grid-6 {
+    grid-row-start: 3;
+    grid-column-start: 4;
+}
