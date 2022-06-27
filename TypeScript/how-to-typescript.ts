@@ -66,7 +66,7 @@ const myCounter = (): (() => number) => {
  */
 const sumTo = (num: number): number => {
     if (num <= 0) {
-        throw "num must be positive";
+        throw new Error("num must be positive");
     } else if (num === 1) {
         return 1;
     } else {
@@ -204,7 +204,7 @@ console.log(`${_name} got a ${grade}.`);
 try {
     sumTo(-1);
 } catch (err) {
-    console.error(`Error: ${err}`);
+    console.error(err as Error);
 } finally {
     console.log("Finally on to classes!");
 }
