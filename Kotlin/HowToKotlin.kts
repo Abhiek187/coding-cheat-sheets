@@ -10,7 +10,7 @@ enum class State {
     CALM,
     ROWDY; // one of the rare times you need a semicolon
 
-    override fun toString(): String = name.toLowerCase(Locale.ROOT) // one-line return
+    override fun toString(): String = name.lowercase() // one-line return
 }
 
 // Data classes come with equals(), hashCode(), toString(), componentN(), copy()
