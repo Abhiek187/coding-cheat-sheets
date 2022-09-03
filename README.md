@@ -2,6 +2,39 @@
 
 This is a collection of programs that showcases basic functionalities in each programming language (that I know of).
 
+Core concepts include\*:
+
+- Hello World
+- Variables (e.g., int, char, enums, structs, null)
+- Input/Output
+- Math Operations (e.g., +, -, \*, /, %)
+- Logical Operators (e.g., and, or, not)
+- Conditional Operators (e.g., if, else)
+- Loops (e.g., while, for)
+- Pointers
+- Optionals
+- Functions
+  - String Methods
+  - Docstrings
+  - Recursion
+  - Generics
+  - Operator Overloading
+- Arrays
+  - Static & Dynamic Arrays
+  - Array Methods
+- Dictionaries
+- Tuples
+- Sets
+- Exception Handling
+- Object-Oriented Programming
+  - Classes (constructors & destructors)
+  - Encapsulation (access modifiers)
+  - Inheritance (base & derived classes)
+  - Abstraction (interfaces & abstract classes)
+  - Polymorphism (virtual classes & functions)
+
+\*Note that not all languages support these features. And some languages like SQL operate using their own syntax.
+
 ## When did you come up with the idea?
 
 In 2018, I was learning Python and was bombarded with so much info about its syntax. To help me retain all the information, I created `how_to_python.py`, a culmination of all the basic Python syntax into one program. I was very proud of the end product that I considered doing something similar to other programming languages. However, I never committed to the idea until a few years later.
