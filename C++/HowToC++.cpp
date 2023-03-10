@@ -75,7 +75,7 @@ public:
     virtual void status() const override final
     {
         string stateStr{this->m_state == State::rowdy ? "rowdy" : "calm"};
-        cout << "This " + this->m_subject << " class has " << this->m_size
+        cout << "This " << this->m_subject << " class has " << this->m_size
              << " students and is " << stateStr << ".\n";
     }
 };

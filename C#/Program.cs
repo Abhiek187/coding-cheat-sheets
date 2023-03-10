@@ -190,7 +190,7 @@ namespace HowToCsharp
 
             int sum = 0;
             OutSum(7, 3, out sum); // initializes sum to 7 + 3 = 10
-            Println($"The sum from 0 to {sum} = {RecursiveSum(num: sum)}");
+            Println($"The sum from 1 to {sum} = {RecursiveSum(num: sum)}");
             Println(); // unlike Java, C# supports default parameters
 
             // Arrays & Lists
