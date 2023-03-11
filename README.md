@@ -26,7 +26,7 @@ Core concepts include\*:
 - Tuples
 - Sets
 - Exception Handling
-- Object-Oriented Programming
+- Object-Oriented Programming (OOP)
   - Classes (constructors & destructors)
   - Encapsulation (access modifiers)
   - Inheritance (base & derived classes)
@@ -44,3 +44,107 @@ Python was a language I would utilize, but not regularly. So, to jog my memory, 
 ## How can I utilize this repo?
 
 Each language is divided into folders, where each folder contains a separate **README** detailing the backstory of each language and how to run each file. From there, you can learn how each component of a language comes together. Note that this only covers the basics of a language. Please refer to the documentation or take a learning course to thoroughly learn a particular language.
+
+## Fun Facts
+
+_Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical procedural languages_
+
+### Compiled Languages
+
+- C
+- C#
+- C++
+- Dart (compiles ahead-of-time (AOT) for mobile and just-in-time (JIT) for web)
+- Go
+- Java (compiles to bytecode, then uses a JIT compiler at runtime)
+- Kotlin
+- Rust
+- Swift
+- TypeScript (compiles to JS)
+
+### Interpreted Languages
+
+- JavaScript
+- MATLAB
+- Python
+- Ruby
+- Shell
+
+### Languages that Require Semicolons
+
+- C
+- C#
+- C++
+- Dart
+- Java
+- MATLAB (to suppress output)
+- Rust
+
+### Languages that aren't Open-Source
+
+- MATLAB
+
+### Languages that Support Class-Based OOP
+
+- C#
+- C++
+- Dart
+- Java
+- Kotlin
+- MATLAB
+- Python
+- Ruby
+- Swift
+- TypeScript (JS classes are syntactic sugar for prototypes)
+
+### Statically Typed Languages
+
+- C
+- C#
+- C++
+- Dart
+- Go
+- Java
+- Kotlin
+- Rust
+- Swift
+- TypeScript (but can be dynamic like JS)
+
+### Dynamically Typed Languages
+
+- JavaScript
+- MATLAB
+- Python
+- Ruby
+- Shell
+
+### Languages with Pointers
+
+- C
+- C#
+- C++
+- Go
+- Rust
+
+### Languages that Require Manual Memory Management
+
+- C
+- C++
+
+### Languages that Don't Require _break_ in Switch Statements
+
+- Go
+- Kotlin (when statements)
+- MATLAB
+- Ruby (case statements)
+- Rust (match statements)
+- Swift
+
+### Languages with Null Safety
+
+- C#
+- Dart
+- Kotlin
+- Rust
+- Swift
+- TypeScript
