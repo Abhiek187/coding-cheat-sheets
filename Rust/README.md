@@ -1,6 +1,6 @@
 # Rust
 
-![Rust Logo](img-rust.png)
+<img src="img-rust.png" alt="Rust Logo" width="250">
 
 Rust is a low-level language optimized for performance, memory, and reliability. It's one of the most loved languages according to multiple StackOverflow surveys. It's used in systems development for tools like WebAssembly and game engines.
 
