@@ -298,8 +298,7 @@ fn main() {
 
     // HashMaps
     let mut my_dict = HashMap::new();
-    my_dict.insert("month", 4);
-    my_dict.insert("day", 18);
+    my_dict.extend([("month", 4), ("day", 18)]);
     my_dict.insert("year", 1994);
     println!("my_dict: {my_dict:?}");
 
