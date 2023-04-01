@@ -12,6 +12,7 @@
 #include <cstddef>
 #include <iostream>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 // using namespace std; // not good practice
@@ -31,6 +32,8 @@ using std::sqrt;
 using std::array;
 // <cstddef>
 using std::size_t;
+// <unordered_map>
+using std::unordered_map;
 // <vector>
 using std::vector;
 
@@ -183,6 +186,17 @@ void printVector(const vector<T> &v)
     cout << "size = " << v.size() << ", capacity = " << v.capacity() << '\n';
 }
 
+template <typename K, typename V>
+void printMap(const std::unordered_map<K, V> &m)
+{
+    for (const auto &pair : m)
+    {
+        cout << pair.first << ": " << pair.second << '\n';
+    }
+
+    cout << "size = " << m.size() << ", max_size = " << m.max_size() << '\n';
+}
+
 // main gets executed first
 int main(int argc, char *argv[])
 {
@@ -293,6 +307,23 @@ int main(int argc, char *argv[])
     cout << "Dynamic array:\n";
     printVector(fakeString);
     fakeString.clear();
+    cout << '\n';
+
+    // Maps
+    unordered_map<string, int> myDict{
+        {"month", 4},
+        {"day", 18}};
+    myDict["year"] = 1994;
+    printMap(myDict);
+
+    if (auto search = myDict.find("ssn"); search != myDict.end())
+    {
+        cout << "You got hacked! " << myDict["ssn"] << '\n';
+    }
+    else
+    {
+        cout << "There's no key called ssn." << '\n';
+    }
     cout << '\n';
 
     // Exception Handling

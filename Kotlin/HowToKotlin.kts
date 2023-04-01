@@ -78,7 +78,7 @@ infix fun Double.`**`(exponent: Double): Double = this.pow(exponent)
 
 /**
  * Recursively sums from 1 to [num].
- * 
+ *
  * @throws IllegalArgumentException if [num] is non-positive
  */
 fun sumTo(num: Int=1): Int {
@@ -99,11 +99,11 @@ fun main(args: Array<String>) {
     // Variables
     var myInt = 21 // mutable, implicitly converted to Int
     val myDouble: Double = -0.14597 // constant, explicitly typed
-    val myChar: Char = '\t'
-    val myBool: Boolean = true
-    val myString: String = "This is a string."
-    val state: State = State.ROWDY
-    val student: Student = Student(name = "Chris Nowell", 65) // named parameter (optional)
+    val myChar = '\t'
+    val myBool = true
+    val myString = "This is a string."
+    val state = State.ROWDY
+    val student = Student(name = "Chris Nowell", 65) // named parameter (optional)
     student.apply {
         name = "Joe Schmo"
         grade = 94
@@ -129,7 +129,7 @@ fun main(args: Array<String>) {
     // Math Operations
     println("$myInt ^ $myDouble = ${myInt `**` myDouble}") // braces for expressions
     println("Weird math: log2(-1) = ${log2(-1.0)}, sqrt(-1) = ${sqrt(-1.0)}, "
-        + "(-1)^0.5 = ${(-1.0).pow(0.5)}")
+            + "(-1)^0.5 = ${(-1.0).pow(0.5)}")
     println("Rounding: $myDouble \u2192 ${myDouble.round(2)}")
     println()
 
@@ -191,14 +191,14 @@ fun main(args: Array<String>) {
         args.forEachIndexed { index, arg -> println("args[$index] = $arg") }
     }
 
-    val cubes: DoubleArray = DoubleArray(5) { n -> n.toDouble() `**` 3 } // fixed array
+    val cubes = DoubleArray(5) { n -> n.toDouble() `**` 3 } // fixed array
 
     for ((index, value) in cubes.withIndex()) {
         // Eq. to enumerate()
         println("$index ^ 3 = ${value.roundToInt()}") // make doubles whole numbers
     }
 
-    var fakeString: ArrayList<Char> = arrayListOf('a', 't', 'r') // dynamic array
+    val fakeString: ArrayList<Char> = arrayListOf('a', 't', 'r') // dynamic array
     fakeString.remove('a')
     fakeString.add(index = 0, element = 's')
 
@@ -208,6 +208,18 @@ fun main(args: Array<String>) {
 
     fakeString.clear()
     println('\n') // print two newlines
+
+    // HashMaps
+    val myDict = mutableMapOf("month" to 4, "day" to 18) // key to value
+    myDict["year"] = 1994
+    println(myDict)
+
+    if (myDict.contains("ssn")) {
+        println("You got hacked! ${myDict["ssn"]}")
+    } else {
+        println("There's no key called ssn.")
+    }
+    println()
 
     // Exception Handling
     try {
@@ -219,9 +231,9 @@ fun main(args: Array<String>) {
     }
 
     // Classes
-    //val class0: SampleClass = SampleClass("science", 20, State.ROWDY) // SampleClass is abstract
-    val class1: MathClass = MathClass(size = 50)
-    val class2: EnglishClass = EnglishClass(size = 30)
+    //val class0 = SampleClass("science", 20, State.ROWDY) // SampleClass is abstract
+    val class1 = MathClass(size = 50)
+    val class2 = EnglishClass(size = 30)
     class1.status()
     class2.status()
 }

@@ -10,6 +10,7 @@
 
 #include <array>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 enum class State
@@ -34,5 +35,7 @@ template <typename T, size_t size>
 void printStdArr(const std::array<T, size> &arr);
 template <typename T>
 void printVector(const std::vector<T> &v);
+template <typename K, typename V>
+void printMap(const std::unordered_map<K, V> &m);
 
 #endif /* HOWTOC___H_ */

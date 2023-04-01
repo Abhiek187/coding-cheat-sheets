@@ -100,6 +100,15 @@ namespace HowToCsharp
             list.ForEach(e => Console.WriteLine($"{e} "));
             Console.WriteLine($"count = {list.Count}");
         }
+        public static void Print<K, V>(this Dictionary<K, V> dict)
+        {
+            foreach (KeyValuePair<K, V> kvp in dict)
+            {
+                Console.WriteLine($"Key = {kvp.Key}, Value = {kvp.Value}");
+            }
+
+            Console.WriteLine($"count = {dict.Count}");
+        }
     }
     class Program
     {
@@ -223,6 +232,25 @@ namespace HowToCsharp
             Println("Dynamic array:");
             fakeString.Print();
             fakeString.Clear();
+            Println();
+
+            // Dictionaries
+            Dictionary<string, int> myDict = new Dictionary<string, int>
+            {
+                {"month", 4},
+                {"day", 18}
+            };
+            myDict.Add("year", 1994);
+            myDict.Print();
+
+            if (myDict.ContainsKey("ssn"))
+            {
+                Println($"You got hacked! {myDict["ssn"]}");
+            }
+            else
+            {
+                Println("There's no key called ssn.");
+            }
             Println();
 
             // Exception Handling

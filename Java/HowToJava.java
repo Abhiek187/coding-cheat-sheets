@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 enum State {
@@ -103,6 +105,11 @@ public class HowToJava {
     public static <T> void printList(List<T> list) {
         list.forEach(e -> System.out.print(e + " "));
         println("size = " + list.size());
+    }
+
+    public static <K, V> void printMap(Map<K, V> map) {
+        System.out.println(map);
+        println("size = " + map.size());
     }
 
     /*
@@ -223,6 +230,19 @@ public class HowToJava {
         println("Dynamic array:");
         printList(fakeString);
         fakeString.clear();
+        println("");
+
+        // HashMaps
+        Map<String, Integer> myDict = new HashMap<String, Integer>();
+        myDict.putAll(Map.of("month", 4, "day", 18));
+        myDict.put("year", 1994);
+        printMap(myDict);
+
+        if (myDict.containsKey("ssn")) {
+            println("You got hacked! " + myDict.get("ssn"));
+        } else {
+            println("There's no key called ssn.");
+        }
         println("");
 
         // Exception Handling
