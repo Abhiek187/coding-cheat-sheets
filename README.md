@@ -97,6 +97,12 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Swift
 - TypeScript (JS classes are syntactic sugar for prototypes)
 
+### Languages that Support Multiple Inheritance
+
+- C++
+- MATLAB
+- Python
+
 ### Statically Typed Languages
 
 - C
