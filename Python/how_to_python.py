@@ -176,7 +176,7 @@ if __name__ == "__main__":
         print("The while statement finished!")
 
     # Declaring Functions
-    help(fibonacci)
+    # help(fibonacci)
     for num in fibonacci(10):
         print(f"{num} ", end="")  # print without a newline
     print()
@@ -220,10 +220,10 @@ if __name__ == "__main__":
 
     # Sets
     my_set_1 = set("Mississippi")
-    my_set_1.add(2)
-    my_set_1.add(1)
-    my_set_1.add(1)
-    my_set_1.remove(2)
+    my_set_1.add(2)  # type: ignore
+    my_set_1.add(1)  # type: ignore
+    my_set_1.add(1)  # type: ignore
+    my_set_1.remove(2)  # type: ignore
     my_set_1.discard("z")  # z doesn't exist
     print(f"set1 = {my_set_1}")
     my_set_2 = set("Minneapolis")
