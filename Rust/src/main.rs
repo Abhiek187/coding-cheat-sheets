@@ -1,12 +1,78 @@
 use rustc_version::version;
+use std::collections::HashMap;
 use std::env;
-use std::io;
-use std::io::Write;
+use std::fmt::{Debug, Display};
+use std::io::{self, Write};
 
-// Enum
-// Struct
+// Derive the default implementation of Debug (to print)
+#[derive(Debug)]
+enum State {
+    Calm,
+    Rowdy,
+}
+
+struct Student {
+    name: String,
+    grade: u8,
+}
+
 // Interface
-// Abstract Class
+trait IClass {
+    fn status(&self) {
+        println!("Something something classroom...");
+    }
+}
+
+// 'a = lifetime annotation
+struct Class<'a> {
+    subject: &'a str,
+    size: i32,
+    state: State,
+}
+
+static mut ID: i32 = 0;
+
+impl<'a> Class<'a> {
+    // Associated function (static)
+    fn new(subject: &'a str, size: i32, state: State) -> Self {
+        let new_class = Class {
+            subject,
+            size,
+            state,
+        };
+        unsafe { ID += 1 };
+        println!("{new_class}");
+        return new_class;
+    }
+}
+
+impl<'a> IClass for Class<'a> {
+    fn status(&self) {
+        println!(
+            "This {} class has {} students and is {:?}.",
+            self.subject, self.size, self.state
+        );
+    }
+}
+
+// Destructor
+impl<'a> Drop for Class<'a> {
+    fn drop(&mut self) {
+        println!("You dropped out of {}.", self.subject);
+    }
+}
+
+// toString()
+impl<'a> Display for Class<'a> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "Welcome to {} class! You are student #{}.",
+            self.subject,
+            unsafe { ID }
+        )
+    }
+}
 
 // Extensions
 trait StringUtils {
@@ -37,18 +103,25 @@ fn add_ptrs(a: &i32, b: &i32, sum: &mut i32) {
 /// - **num:** The upper limit of the sum (inclusive)
 ///
 /// ## Returns
-/// Returns the sum from 1 to `num`.
-///
-/// ## Panics
-/// Panics if `num` is non-positive.
-fn recursive_sum(num: i32) -> i32 {
+/// Returns the sum from 1 to `num`, or an error if `num` is nonpositive.
+fn recursive_sum(num: i32) -> Result<i32, &'static str> {
     if num <= 0 {
-        panic!("num must be positive");
+        // Result<T, E> = recoverable, panic!() = unrecoverable
+        return Result::Err("num must be positive");
     } else if num == 1 {
-        return 1;
+        Result::Ok(1) // return expression
     } else {
-        num + recursive_sum(num - 1) // return expression
+        Result::Ok(num + recursive_sum(num - 1).unwrap())
     }
+}
+
+// Generic Functions
+fn print_vector<T>(vec: &Vec<T>)
+where
+    T: Debug, // or <T: Debug>
+{
+    println!("{vec:?}");
+    println!("size = {}", vec.len());
 }
 
 // main gets executed first
@@ -68,6 +141,11 @@ fn main() {
     let my_bool = true;
     let my_string = String::from("This is a string.");
     let null_var: Option<i32> = None;
+    let state = State::Rowdy;
+    let student = Student {
+        name: "Joe Schmo".to_string(),
+        grade: 100,
+    };
 
     // Input/Output
     let mut buffer = String::new();
@@ -80,6 +158,8 @@ fn main() {
         .read_line(&mut buffer)
         .expect("Failed to get input, exiting...");
     println!("Hey {}!", buffer.trim());
+    println!("state: {state:?}");
+    println!("{} got a {}.\n", student.name, student.grade);
 
     // Math Operations
     // +, -, *, /, and % behave like normal
@@ -131,6 +211,12 @@ fn main() {
         }
     }
 
+    if let Some(_) = null_var {
+        println!("null_var isn't null! {}", null_var.unwrap_or(-1));
+    } else {
+        println!("oops...");
+    }
+
     let mut max = 5;
 
     // loop == while true
@@ -178,7 +264,10 @@ fn main() {
     add_ptrs(my_int_ptr, my_int_ptr, &mut sum);
     println!("sum resolves to {sum}");
     max = 10;
-    println!("The sum from 1 to {max} = {}", recursive_sum(max));
+    println!(
+        "The sum from 1 to {max} = {}",
+        recursive_sum(max).unwrap_or(-1)
+    );
     println!();
 
     // Arrays & Vectors
@@ -198,7 +287,43 @@ fn main() {
     println!("{binary:?}"); // :#? = pretty print
     println!("{zeros:?}");
 
+    let mut fake_string: Vec<char> = Vec::new();
+    fake_string.extend_from_slice(&['a', 't', 'r']); // or vec!['a', 't', 'r']
+    fake_string.remove(0);
+    fake_string.insert(0, 's');
+    println!("Dynamic array:");
+    print_vector(&fake_string);
+    fake_string.clear();
+    println!();
+
+    // HashMaps
+    let mut my_dict = HashMap::new();
+    my_dict.insert("month", 4);
+    my_dict.insert("day", 18);
+    my_dict.insert("year", 1994);
+    println!("my_dict: {my_dict:?}");
+
+    if my_dict.get("ssn").is_some() {
+        println!("You got hacked! {}", my_dict["ssn"]);
+    } else {
+        println!("There's no key called ssn.");
+    }
+    println!();
+
     // Exception Handling
+    match recursive_sum(-1) {
+        Ok(result) => {
+            println!("sum(-1) = {result}");
+        }
+        Err(error) => {
+            eprintln!("Error: {error}"); // print to stderr
+        }
+    }
+    println!();
 
     // Classes
+    let math_class = Class::new("math", 50, State::Rowdy);
+    let english_class = Class::new("english", 30, State::Calm);
+    math_class.status();
+    english_class.status();
 }
