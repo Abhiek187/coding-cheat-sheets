@@ -154,3 +154,28 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Rust
 - Swift
 - TypeScript
+
+### Languages with // Comments
+
+- C
+- C#
+- C++
+- Dart
+- Go
+- Java
+- JavaScript
+- Kotlin
+- Rust
+- Swift
+- TypeScript
+
+### Languages with # Comments
+
+- Python
+- Ruby
+- Shell
+
+### Languages that Don't Support Multiline Comments
+
+- Python
+- Shell
