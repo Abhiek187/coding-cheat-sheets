@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/LANGUAGE
 # Edit at https://www.toptal.com/developers/gitignore?templates=LANGUAGE
-# Note: nothing for CSS, HTML, JavaScript, JSON, Markdown, SQL, or TypeScript
+# Note: nothing for CSS, HTML, JavaScript, JSON, Markdown, PHP, SQL, or TypeScript
 
 ### C ###
 # Prerequisites
@@ -767,6 +767,14 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+### Scala ###
+*.class
+*.tasty
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
 
 ### Swift ###
 # Xcode
