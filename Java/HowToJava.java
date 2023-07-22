@@ -22,8 +22,8 @@ interface Class {
 }
 
 abstract class SampleClass implements Class {
-    private String subject;
-    private int size;
+    private final String subject;
+    private final int size;
     protected State state;
     static int id = 0;
 
@@ -94,7 +94,7 @@ public class HowToJava {
     }
 
     // Generic Functions
-    public static <T> void printArr(T arr[]) {
+    public static <T> void printArr(T[] arr) {
         for (T element : arr) {
             System.out.print(element + " ");
         }
@@ -223,7 +223,7 @@ public class HowToJava {
         printArr(nums1);
         printArr(nums2);
 
-        List<Character> fakeString = new ArrayList<Character>();
+        List<Character> fakeString = new ArrayList<>();
         fakeString.addAll(Arrays.asList('a', 't', 'r'));
         fakeString.remove(0);
         fakeString.add(0, 's');
@@ -233,7 +233,7 @@ public class HowToJava {
         println("");
 
         // HashMaps
-        Map<String, Integer> myDict = new HashMap<String, Integer>();
+        Map<String, Integer> myDict = new HashMap<>();
         myDict.putAll(Map.of("month", 4, "day", 18));
         myDict.put("year", 1994);
         printMap(myDict);
