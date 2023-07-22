@@ -66,6 +66,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 
 - JavaScript
 - MATLAB
+- PHP
 - Python
 - Ruby
 - Shell
@@ -78,6 +79,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Dart
 - Java
 - MATLAB (to suppress output)
+- PHP
 - Rust
 
 ### Languages that aren't Open-Source
@@ -92,6 +94,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Java
 - Kotlin
 - MATLAB
+- PHP
 - Python
 - Ruby
 - Swift
@@ -102,6 +105,15 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - C++
 - MATLAB
 - Python
+
+### Languages with Destructors
+
+- C#
+- C++
+- PHP
+- Python
+- Rust
+- Swift
 
 ### Statically Typed Languages
 
@@ -120,6 +132,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 
 - JavaScript
 - MATLAB
+- PHP
 - Python
 - Ruby
 - Shell
@@ -165,12 +178,14 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Java
 - JavaScript
 - Kotlin
+- PHP
 - Rust
 - Swift
 - TypeScript
 
 ### Languages with # Comments
 
+- PHP (less common)
 - Python
 - Ruby
 - Shell
