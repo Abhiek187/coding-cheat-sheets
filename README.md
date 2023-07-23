@@ -59,6 +59,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Java (compiles to bytecode, then uses a JIT compiler at runtime)
 - Kotlin
 - Rust
+- Scala
 - Swift
 - TypeScript (compiles to JS)
 
@@ -97,6 +98,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - PHP
 - Python
 - Ruby
+- Scala
 - Swift
 - TypeScript (JS classes are syntactic sugar for prototypes)
 
@@ -125,6 +127,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Java
 - Kotlin
 - Rust
+- Scala
 - Swift
 - TypeScript (but can be dynamic like JS)
 
@@ -157,6 +160,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - MATLAB
 - Ruby (case statements)
 - Rust (match statements)
+- Scala (match statements)
 - Swift
 
 ### Languages with Null Safety
@@ -165,6 +169,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Dart
 - Kotlin
 - Rust
+- Scala
 - Swift
 - TypeScript
 
@@ -180,6 +185,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Kotlin
 - PHP
 - Rust
+- Scala
 - Swift
 - TypeScript
 
