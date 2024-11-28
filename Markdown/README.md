@@ -37,7 +37,7 @@ _Italics_: `*Italics*` or `_Italics_`
 1. List Item 1
 2. List Item 2
 
--   Unordered List Item
+- Unordered List Item
 
 ```
 1. List Item 1
@@ -88,4 +88,26 @@ Horizontal Rule:
 
 `---` or `***` or `___`
 
-For more on Markdown, [visit John Gruber's Markdown site](https://daringfireball.net/projects/markdown/).
+> [!NOTE]
+>
+> `> [!NOTE]` Useful information that users should know, even when skimming content.
+
+> [!TIP]
+>
+> `> [!TIP]` Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+>
+> `> [!IMPORTANT]` Key information users need to know to achieve their goal.
+
+> [!WARNING]
+>
+> `> [!WARNING]` Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+>
+> `> [!CAUTION]` Advises about risks or negative outcomes of certain actions.
+
+For more on Markdown, [visit John Gruber's Markdown site](https://daringfireball.net/projects/markdown/).[^1]
+
+[^1]: Footnote `[^1]`
