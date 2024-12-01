@@ -1,5 +1,8 @@
 #!/bin/bash
 # ^ Shebang to run this script in a bash shell
+# Strict mode 
+# e = exit on failure, u = check unresolved variables, x = print command, o = exit on pipe failure
+# set -euxo pipefail
 
 recursive_sum () {
     # args = $1 $2 ...
