@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Disambiguate MATLAB and Objective-C files
+MATLAB/*.m linguist-language=MATLAB
+Objective-C/*.m linguist-language=Objective-C
