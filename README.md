@@ -58,6 +58,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Go
 - Java (compiles to bytecode, then uses a JIT compiler at runtime)
 - Kotlin
+- Objective-C
 - Rust
 - Scala
 - Swift
@@ -80,6 +81,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Dart
 - Java
 - MATLAB (to suppress output)
+- Objective-C
 - PHP
 - Rust
 
@@ -95,6 +97,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Java
 - Kotlin
 - MATLAB
+- Objective-C
 - PHP
 - Python
 - Ruby
@@ -112,6 +115,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 
 - C#
 - C++
+- Objective-C
 - PHP
 - Python
 - Rust
@@ -126,6 +130,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Go
 - Java
 - Kotlin
+- Objective-C
 - Rust
 - Scala
 - Swift
@@ -146,6 +151,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - C#
 - C++
 - Go
+- Objective-C
 - Rust
 
 ### Languages that Require Manual Memory Management
@@ -183,6 +189,7 @@ _Note: Excluding CSS, HTML, JSON, Markdown, and SQL since they're not typical pr
 - Java
 - JavaScript
 - Kotlin
+- Objective-C
 - PHP
 - Rust
 - Scala

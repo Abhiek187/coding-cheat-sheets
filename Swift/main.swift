@@ -178,7 +178,7 @@ print("Adding two numbers: \(myInt) + \(myDouble) = \(Double(myInt) + myDouble)"
 print("\(myInt) + \(myString) = \(String(myInt) + myString)")
 print("Dividing two ints: \(myInt) / 2 = \(myInt / 2)")
 print("\(myDouble) ^ \(myInt) = \(myDouble ** Double(myInt))")
-print("Werid math: 0/0.0 = \(0/0.0), sqrt(-1) = \(sqrt(-1))")
+print("Weird math: 0/0.0 = \(0/0.0), sqrt(-1) = \(sqrt(-1))")
 print("Rounding: \(myDouble) \u{2192} \(myDouble.round(toPlaces: 2))")
 print()
 
