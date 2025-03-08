@@ -3,7 +3,7 @@ SWIFTC = swiftc -g
 # File name
 FILE = main
 # Binary files
-OUTPUTS = $(wildcard *.out) $(wildcard *.o)
+OUTPUTS = $(wildcard *.out*) $(wildcard *.o)
 
 # Default make command
 all: $(FILE).out
@@ -14,4 +14,4 @@ $(FILE).out: $(FILE).swift
 
 # Remove all binary files (-f removes error if no files exist)
 clean:
-	rm -f $(OUTPUTS)
+	rm -rf $(OUTPUTS)

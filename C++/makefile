@@ -3,7 +3,7 @@ G++ = g++ -std=c++17 -pedantic-errors -Wall -g3
 # File name
 FILE = HowToC++
 # Binary files
-OUTPUTS = $(wildcard *.out) $(wildcard *.o)
+OUTPUTS = $(wildcard *.out*) $(wildcard *.o)
 
 # Default make command
 all: $(FILE).out
@@ -14,4 +14,4 @@ $(FILE).out: $(FILE).cpp
 
 # Remove all binary files (-f removes error if no files exist)
 clean:
-	rm -f $(OUTPUTS)
+	rm -rf $(OUTPUTS)

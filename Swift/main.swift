@@ -39,7 +39,7 @@ class SampleClass: Class {
     private var subject: String
     private var size: Int
     private var state: State
-    fileprivate static var id = 0 // class vars and funcs can be overridden
+    fileprivate nonisolated(unsafe) static var id = 0 // class vars and funcs can be overridden
 
     init(subject: String, size: Int, state: State) {
         self.subject = subject
@@ -108,7 +108,9 @@ extension String: Error, LocalizedError {
 }
 
 func getSwiftVersion() -> Int {
-    #if swift(>=5.0)
+    #if swift(>=6.0)
+    return 6
+    #elseif swift(>=5.0)
     return 5
     #elseif swift(>=4.0)
     return 4
