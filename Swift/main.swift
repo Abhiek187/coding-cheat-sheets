@@ -79,6 +79,18 @@ final class EnglishClass: SampleClass, CustomStringConvertible {
     }
 }
 
+struct RuntimeError: LocalizedError {
+    let description: String
+
+    init(_ description: String) {
+        self.description = description
+    }
+
+    var errorDescription: String? {
+        description
+    }
+}
+
 // Extensions
 extension Double {
     func round(toPlaces places: Int) -> Double {
@@ -88,10 +100,7 @@ extension Double {
     }
 }
 
-extension String: Error, LocalizedError {
-    // Confirm to error protocols to throw a string
-    public var errorDescription: String? { return self }
-
+extension String {
     func substring(start: Int, end: Int) -> String {
         let startIndex = self.index(self.startIndex, offsetBy: start)
         let endIndex = self.index(self.startIndex, offsetBy: end)
@@ -133,14 +142,14 @@ func **(lhs: Double, rhs: Double) -> Double {
 
 /// Recursively sums from 1 to `num`.
 ///
-/// - Throws: `Exception` if `num` is non-positive
+/// - Throws: `RuntimeError` if `num` is non-positive
 ///
 /// - Parameter num: the upper limit of the sum (inclusive)
 ///
 /// - Returns: the sum from 1 to `num`
 func sumTo(_ num: Int=1) throws -> Int {
     if num <= 0 {
-        throw "num must be positive"
+        throw RuntimeError("num must be positive")
     } else if num == 1 {
         return 1
     } else {
